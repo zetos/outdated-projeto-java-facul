@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,9 +7,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Bean.Categoria;
-import Bean.Produto;
-import Util.ConnectionFactory;
+import bean.Categoria;
+import bean.Produto;
+import util.ConnectionFactory;
 
 public class ProdutoDAO {
 	private Connection conn;
@@ -104,10 +104,33 @@ public class ProdutoDAO {
 		}
 	}
 
-	public List<Produto> todosProdutos() throws Exception {
+	public List<Produto> listarProdutos() throws Exception {
 		try {
 			categoriaDAO = new CategoriaDAO();
 			ps = conn.prepareStatement("SELECT * FROM produto");
+			rs = ps.executeQuery();
+			List<Produto> list = new ArrayList<Produto>();
+			while (rs.next()) {
+				int produtoId = rs.getInt(1);
+				String nome = rs.getString(2);
+				String descricao = rs.getString(3);
+				String preco = rs.getString(4);
+				Categoria categoria = categoriaDAO.procurar(rs.getInt(5));
+				list.add(new Produto(produtoId, nome, descricao, preco, categoria));
+			}
+			return list;
+		} catch (SQLException sqle) {
+			throw new Exception(sqle);
+		} finally {
+			ConnectionFactory.closeConnection(conn, ps, rs);
+		}
+	}
+	
+	public List<Produto> listarProdutosCategoria(int categoriaId) throws Exception {
+		try {
+			categoriaDAO = new CategoriaDAO();
+			ps = conn.prepareStatement("SELECT * FROM produto WHERE categoriaId=?");
+			ps.setInt(1, categoriaId);
 			rs = ps.executeQuery();
 			List<Produto> list = new ArrayList<Produto>();
 			while (rs.next()) {

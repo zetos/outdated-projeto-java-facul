@@ -1,4 +1,4 @@
-package Dao;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Bean.Categoria;
-import Util.ConnectionFactory;
+import bean.Categoria;
+import util.ConnectionFactory;
 
 public class CategoriaDAO {
 	private Connection conn;
@@ -97,7 +97,7 @@ public class CategoriaDAO {
 		}
 	}
 
-	public List<Categoria> todasCategorias() throws Exception {
+	public List<Categoria> listarCategorias() throws Exception {
 		try {
 			ps = conn.prepareStatement("SELECT * FROM categoria");
 			rs = ps.executeQuery();
