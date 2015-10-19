@@ -17,17 +17,7 @@
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Link</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown" role="button" aria-haspopup="true"
-							aria-expanded="false">Dropdown <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
-								<li role="separator" class="divider"></li>
-								<li><a href="#">Separated link</a></li>
-							</ul></li>
+						<li><a href="#">Login</a></li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -37,14 +27,11 @@
 			<!-- Sidebar -->
 			<div id="sidebar-wrapper">
 				<ul class="sidebar-nav">
-					<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
-					<li><a href="#">Dashboard</a></li>
-					<li><a href="#">Shortcuts</a></li>
-					<li><a href="#">Overview</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Services</a></li>
-					<li><a href="#">Contact</a></li>
+					<li class="sidebar-brand"><a href="#"> Categorias </a></li>
+					<li><a href="#">Todos</a></li>
+						<c:forEach var="lista" items="${ requestScope.listarCategorias }">
+					<li><a href="#">${lista.nome}</a></li>
+						</c:forEach>
 				</ul>
 			</div>
 			<!-- /#sidebar-wrapper -->
