@@ -1,3 +1,15 @@
 body { 
 	padding-top: 70px; 
+	padding-bottom: 15px;
+}
+
+footer {
+	padding-right: 0;
+	padding-left: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	/* z-index: 1030; Adicionar caso queira sobrepor o sidebar */
 }
