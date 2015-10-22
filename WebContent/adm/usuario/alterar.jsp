@@ -8,13 +8,5 @@
 </head>
 <body>
 
-	<!-- 
-	
-		CATEGORIA INDEX
-		USUARIO INDEX
-		PRODUTO INDEX
-		
-	-->
-
 </body>
 </html>

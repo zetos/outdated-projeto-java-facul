@@ -34,8 +34,8 @@
 
 <body>
 	<div id="wrapper">
-<!-- Page Layout -->	
-<jsp:include page="resources/include/layout.jsp" flush="true"></jsp:include>
+		<!-- Page Layout -->
+		<jsp:include page="resources/include/layout.jsp" flush="true"></jsp:include>
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
@@ -59,8 +59,6 @@
 				</div>
 			</div>
 		</div>
-	
-
 		<!-- /#page-content-wrapper -->
 	</div>
 
