@@ -38,3 +38,14 @@
 	<!-- /#sidebar-wrapper -->
 </nav>
 
+	<!-- Footer -->
+	<footer class="panel-footer">
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">Copyright &copy; Asia Corp 2015</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
