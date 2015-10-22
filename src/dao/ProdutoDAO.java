@@ -30,13 +30,12 @@ public class ProdutoDAO {
 			throw new Exception("O valor passado nao pode ser nulo");
 
 		try {
-			String SQL = "INSERT INTO produto (produtoId, nome, descricao, preco, categoriaId) values ( ?, ?, ?, ?, ?)";
+			String SQL = "INSERT INTO produto (nome, descricao, preco, categoriaId) values (?, ?, ?, ?)";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, produto.getProdutoId());
-			ps.setString(2, produto.getNome());
-			ps.setString(3, produto.getDescricao());
-			ps.setString(4, produto.getPreco());
-			ps.setInt(5, produto.getCategoria().getCategoriaId());
+			ps.setString(1, produto.getNome());
+			ps.setString(2, produto.getDescricao());
+			ps.setString(3, produto.getPreco());
+			ps.setInt(4, produto.getCategoria().getCategoriaId());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);

@@ -28,12 +28,11 @@ public class CategoriaDAO {
 			throw new Exception("O valor passado nao pode ser nulo");
 
 		try {
-			String SQL = "INSERT INTO categoria (categoriaId, nome, linha, faixaEtaria) values ( ?, ?, ?, ?)";
+			String SQL = "INSERT INTO categoria (nome, linha, faixaEtaria) values (?, ?, ?)";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, categoria.getCategoriaId());
-			ps.setString(2, categoria.getNome());
-			ps.setString(3, categoria.getLinha());
-			ps.setString(4, categoria.getFaixaEtaria());
+			ps.setString(1, categoria.getNome());
+			ps.setString(2, categoria.getLinha());
+			ps.setString(3, categoria.getFaixaEtaria());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);

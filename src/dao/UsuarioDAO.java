@@ -28,12 +28,11 @@ public class UsuarioDAO {
 			throw new Exception("O valor passado nao pode ser nulo");
 
 		try {
-			String SQL = "INSERT INTO usuario (usuarioId, nome, login, senha) values ( ?, ?, ?, ?)";
+			String SQL = "INSERT INTO usuario (nome, login, senha) values ( ?, ?, ?)";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, usuario.getUsuarioId());
-			ps.setString(2, usuario.getNome());
-			ps.setString(3, usuario.getLogin());
-			ps.setString(4, usuario.getSenha());
+			ps.setString(1, usuario.getNome());
+			ps.setString(2, usuario.getLogin());
+			ps.setString(3, usuario.getSenha());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);
