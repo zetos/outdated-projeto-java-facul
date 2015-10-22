@@ -1,40 +1,44 @@
 package controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class ProdutoServlet
- */
-@WebServlet("/ProdutoServlet")
+import bean.Produto;
+import dao.ProdutoDAO;
+
+@WebServlet("/Produto")
 public class ProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ProdutoServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    private ProdutoDAO dao;
+    private Produto produto;
+	
+    public ProdutoServlet() {    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html;charset=UTF-8");
+		RequestDispatcher rd = null;
+				
+		try {
+			produto = dao.procurar(Integer.parseInt(request.getParameter("produtoId")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		HttpSession session = request.getSession(true);
+		session.setAttribute("produto", produto);
+
+		rd = request.getRequestDispatcher("/produto.jsp");
+		rd.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

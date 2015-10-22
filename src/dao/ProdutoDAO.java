@@ -125,7 +125,7 @@ public class ProdutoDAO {
 		}
 	}
 	
-	public List<Produto> listarProdutosCategoria(int categoriaId) throws Exception {
+	public List<Produto> listarProdutos(int categoriaId) throws Exception {
 		try {
 			categoriaDAO = new CategoriaDAO();
 			ps = conn.prepareStatement("SELECT * FROM produto WHERE categoriaId=?");
