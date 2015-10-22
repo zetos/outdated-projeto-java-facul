@@ -30,12 +30,13 @@ public class ProdutoDAO {
 			throw new Exception("O valor passado nao pode ser nulo");
 
 		try {
-			String SQL = "INSERT INTO produto (nome, descricao, preco, categoriaId) values (?, ?, ?, ?)";
+			String SQL = "INSERT INTO produto (nome, descricao, preco, img, categoriaId) values (?, ?, ?, ?, ?)";
 			ps = conn.prepareStatement(SQL);
 			ps.setString(1, produto.getNome());
 			ps.setString(2, produto.getDescricao());
 			ps.setString(3, produto.getPreco());
-			ps.setInt(4, produto.getCategoria().getCategoriaId());
+			ps.setString(4, produto.getImg());
+			ps.setInt(5, produto.getCategoria().getCategoriaId());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);
@@ -49,13 +50,14 @@ public class ProdutoDAO {
 			throw new Exception("O valor passado nao pode ser nulo");
 		
 		try {
-			String SQL = "UPDATE produto set nome=?, descricao=?, preco=?, categoriaId=? WHERE produtoId=?";
+			String SQL = "UPDATE produto set nome=?, descricao=?, preco=?, img=?, categoriaId=? WHERE produtoId=?";
 			ps = conn.prepareStatement(SQL);	
 			ps.setString(1, produto.getNome());
 			ps.setString(2, produto.getDescricao());
 			ps.setString(3, produto.getPreco());
-			ps.setInt(4, produto.getCategoria().getCategoriaId());
-			ps.setInt(5, produto.getProdutoId());
+			ps.setString(4, produto.getImg());
+			ps.setInt(5, produto.getCategoria().getCategoriaId());
+			ps.setInt(6, produto.getProdutoId());
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao alterar dados " + sqle, sqle);
@@ -114,8 +116,9 @@ public class ProdutoDAO {
 				String nome = rs.getString(2);
 				String descricao = rs.getString(3);
 				String preco = rs.getString(4);
+				String img = rs.getString(5);
 				Categoria categoria = categoriaDAO.procurar(rs.getInt(5));
-				list.add(new Produto(produtoId, nome, descricao, preco, categoria));
+				list.add(new Produto(produtoId, nome, descricao, preco, img, categoria));
 			}
 			return list;
 		} catch (SQLException sqle) {
@@ -137,8 +140,9 @@ public class ProdutoDAO {
 				String nome = rs.getString(2);
 				String descricao = rs.getString(3);
 				String preco = rs.getString(4);
+				String img = rs.getString(5);
 				Categoria categoria = categoriaDAO.procurar(rs.getInt(5));
-				list.add(new Produto(produtoId, nome, descricao, preco, categoria));
+				list.add(new Produto(produtoId, nome, descricao, preco, img, categoria));
 			}
 			return list;
 		} catch (SQLException sqle) {
