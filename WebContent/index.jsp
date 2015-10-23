@@ -58,25 +58,19 @@
 					<hr>
 					<br>
 							<!-- Brinquedos -->
-							<div class="col-md-4 product">
-								<!--<a href="#"><img src="resources/imgs/dolls/reduced/doll1_r.jpg" alt="Boneca charmosa" class="img-circle"> -->
-								<img src="resources/imgs/actionFigures/reduced/actionfigure5_r.jpg" class="img-responsive product-image" alt="They killed kenny! Bastards!!">
-								<br>
-								<span class="product product-name"><p>Morte aos Power Rangers</p></span>
-								<span class="product product-description">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-									</span>
-									<span class="product product-price">R$ 666,66</span>
-									<span class="product product-details"><p><a href="#">+Detalhes</a></p></span>
-								
 
+						<c:forEach var="brinquedo" items="${ requestScope.todosJedi }">
+							<div class="col-md-4 product">
+								<img src="${brinquedo.imagem}" class="img-responsive product-image" alt="${brinquedo.descricao}">
+								<br>
+								<span class="product product-name"><p>${brinquedo.nome}</p></span>
+								<span class="product product-description"><p>${brinquedo.descricao}</p></span>
+								<span class="product product-price">${brinquedo.preco}</span>
+								<span class="product product-details"><p><a href="#">+Detalhes</a></p></span>
 							</div>
+						</c:forEach>
 							<!-- Fim_Brinquedos -->
+							
 							</div>
 						</div>
 
