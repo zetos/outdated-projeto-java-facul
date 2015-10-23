@@ -34,7 +34,7 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><a href="#"> ÁREA ADMINISTRATIVA </a></li>
-			<li><a href="/ProjetoFinal/CategoriaListar">Categorias</a></li>
+			<li><a href="../../CategoriaListar">Categorias</a></li>
 			<li><a href="#">Produtos</a></li>
 			<li><a href="#">Usuários</a></li>
 		</ul>

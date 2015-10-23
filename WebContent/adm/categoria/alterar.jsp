@@ -80,8 +80,8 @@
 								</tr>
 								<tr>
 									<th colspan="2"><input type="submit"
-										class="btn btn-primary btn-lg" name="bVoltar" value="Salvar" />
-										<a class="btn btn-default btn-lg" href="#" role="button">Voltar</a></th>
+										class="btn btn-primary btn-lg editar-img" name="bVoltar" value="Salvar" />
+										<a class="btn btn-default btn-lg editar-img" href="#" role="button">Voltar</a></th>
 								</tr>
 							</table>
 						</form>
