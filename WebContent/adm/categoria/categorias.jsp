@@ -47,40 +47,37 @@
 					</div>
 
 				</div>
-				<hr>
 				<br>
-			<div class="row">
-				<div class="col-lg-12">
-					<!-- Lista Jedi -->
-
-					<table class="table table-striped">
-						<tr>
-							<th colspan="10"><h3>Categorias</h3></th>
-						</tr>
-						<tr>
-							<th>Nome</th>
-							<th>Código</th>
-							<th>Linha</th>
-							<th>Faixa Etária</th>
-							<th>Alterar</th>
-						</tr>
-						<c:forEach var="lista" items="${ requestScope.todosJedi }">
+				<div class="row">
+					<div class="col-lg-12">
+						<table class="table table-striped">
 							<tr>
-								<td>${lista.nome}</td>
-								<td>${lista.categoriaId}</td>
-								<td>${lista.linha}</td>
-								<td>${lista.faixaEtaria}</td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/edit.png" alt=""></a></td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/delete.png" alt=""></a></td>
+								<th colspan="10"><h3>Categorias</h3></th>
 							</tr>
-						</c:forEach>
-					</table>
+							<tr>
+								<th>Nome</th>
+								<th>Código</th>
+								<th>Linha</th>
+								<th>Faixa Etária</th>
+								<th>Alterar</th>
+							</tr>
+							<c:forEach var="lista" items="${ requestScope.listarCategorias }">
+								<tr>
+									<td>${lista.nome}</td>
+									<td>${lista.categoriaId}</td>
+									<td>${lista.linha}</td>
+									<td>${lista.faixaEtaria}</td>
+									<td><a href=""><img class="img-responsive"
+											src="resources/imgs/outros/edit.png" alt=""></a></td>
+									<td><a href=""><img class="img-responsive"
+											src="resources/imgs/outros/delete.png" alt=""></a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</div>
 				</div>
 			</div>
-
-						</div>
+		</div>
 
 		<!-- /#page-content-wrapper -->
 	</div>
@@ -99,7 +96,6 @@
 			$("#wrapper").toggleClass("toggled");
 		});
 	</script>
-
 </body>
 
 </html>

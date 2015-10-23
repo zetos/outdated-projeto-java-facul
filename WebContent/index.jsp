@@ -83,7 +83,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
-</script>
+	</script>
 </body>
 
 </html>
