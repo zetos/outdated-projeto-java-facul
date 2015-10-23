@@ -49,57 +49,47 @@
 				</div>
 				<hr>
 				<br>
-			<div class="row">
+				<div class="row">
 
-				<div class="col-lg-8 col-lg-offset-2">
-					<jsp:useBean id="categoria" scope="session" class="bean.Categoria" />
-					<form action="AdmServlet?cmd=atualizar" method="post">
-						<table class="table table-striped">
-							<tr>
-								<td>Nome:</td>
-								<td><input class="form-control" type="text" name="nome"
-									value="${categoria.nome}" id="name_categoria" readonly="readonly">
-								</td>
-								<td>ID:</td>
-								<td><input class="form-control" type="text" name="id"
-									value="${categoria.id}" id="id_categoria" readonly="readonly"></td>
-								<td>Faixa:</td>
-								<td><select
-									class="form-control" id="faixa"
-									name="faixa" value="${categoria.faixa}">
-									<option value="Todos">Todos</option>
-									<option value="_12">Até 12 anos</option>
-									<option value="3_12">3 a 12 anos</option>
-									<option value="6_15">6 a 15 anos</option>
-								</select></td>	
-								<td>Linha:</td>
-								<td><select
-									class="form-control" id="linha"
-									name="linha" value="${categoria.linha}">
-									<option value="Todos">Todos</option>
-									<option value="Meninos">Meninos</option>
-									<option value="Meninas">Meninas</option>
-								</select></td>	
-							</tr>
-							<tr>
-								<th colspan="2"><input type="submit"
-									class="btn btn-primary btn-lg" name="bVoltar"
-									value="Salvar" />   <a class="btn btn-default btn-lg" href="#" role="button">Voltar</a></th>
+					<div class="col-lg-8 col-lg-offset-2">
+						<jsp:useBean id="categoria" scope="session" class="bean.Categoria" />
+						<form action="/ProjetoFinal/CategoriaAlterar" method="post">
+							<table class="table table-striped">
+								<tr>
+									<td>Nome:</td>
+									<td><input class="form-control" type="text" name="nome"
+										value="${categoria.nome}" id="name_categoria"></td>
+									<td>ID:</td>
+									<td><input class="form-control" type="text" name="categoriaId"
+										value="${categoria.categoriaId}" id="id_categoria" readonly="readonly"></td>
+									<td>Faixa:</td>
+									<td><select class="form-control" id="faixa" name="faixaEtaria"
+										value="${categoria.faixaEtaria}">
+											<option value="Todos">Todos</option>
+											<option value="Até 12 anos">Até 12 anos</option>
+											<option value="3 a 12 anos">3 a 12 anos</option>
+											<option value="6 a 15 anos">6 a 15 anos</option>
+									</select></td>
+									<td>Linha:</td>
+									<td><select class="form-control" id="linha" name="linha"
+										value="${categoria.linha}">
+											<option value="Todos">Todos</option>
+											<option value="Meninos">Meninos</option>
+											<option value="Meninas">Meninas</option>
+									</select></td>
 								</tr>
-						</table>
-					</form>
+								<tr>
+									<th colspan="2"><input type="submit"
+										class="btn btn-primary btn-lg" name="bVoltar" value="Salvar" />
+										<a class="btn btn-default btn-lg" href="#" role="button">Voltar</a></th>
+								</tr>
+							</table>
+						</form>
+					</div>
 				</div>
-
-
-
-
-
-
 			</div>
-
-						</div>
-
-		<!-- /#page-content-wrapper -->
+			<!-- /#page-content-wrapper -->
+		</div>
 	</div>
 
 
@@ -116,7 +106,6 @@
 			$("#wrapper").toggleClass("toggled");
 		});
 	</script>
-
 </body>
 
 </html>

@@ -50,7 +50,7 @@
 					<div class="col-lg-12">
 						<!-- Lista Categorias -->
 
-						<table class="table table-striped">
+						<table class="table">
 							<tr>
 								<th colspan="5"><h3>Categorias</h3></th>
 							</tr>
@@ -67,7 +67,7 @@
 									<td>${lista.categoriaId}</td>
 									<td>${lista.linha}</td>
 									<td>${lista.faixaEtaria}</td>
-									<td><a href=""><img class="img-responsive"
+									<td><a href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img class="img-responsive"
 											src="resources/imgs/outros/edit.png" alt="editar categoria"></a>
 										<a href=""><img class="img-responsive"
 											src="resources/imgs/outros/delete.png"
@@ -125,7 +125,7 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="AdmServlet" method="get" name="categoriaForm"
+								<form action="AdmServlet" method="post" name="categoriaForm"
 									id="Form_categoria" novalidate>
 									<input type="hidden" name="cmd" value="incluir">
 									<div class="row control-group">
