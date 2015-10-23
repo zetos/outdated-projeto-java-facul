@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Simple Sidebar - Start Bootstrap Template</title>
+<title>Loja de brinquedos</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -42,17 +42,17 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Simple Sidebar</h1>
+						<h1>Loja de brinquedos Asiaticos</h1>
 						<p>This template has a responsive menu toggling system. The
 							menu will appear collapsed on smaller screens, and will appear
 							non-collapsed on larger screens. When toggled using the button
 							below, the menu will appear/disappear. On small screens, the page
 							content will be pushed off canvas.</p>
-						<p>
-							Make sure to keep all page content within the
-							<code>#page-content-wrapper</code>
-							.
-						</p>
+							<span class="promocao">
+								<p>
+									Aproveite nossa Promoção: Leve três, pague quatro!</span>
+								</p>
+							</span>
 					</div>
 					<br>
 					<hr>
