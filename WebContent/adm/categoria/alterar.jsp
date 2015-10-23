@@ -50,34 +50,51 @@
 				<hr>
 				<br>
 			<div class="row">
-				<div class="col-lg-12">
-					<!-- Lista Jedi -->
 
-					<table class="table table-striped">
-						<tr>
-							<th colspan="5"><h3>Categorias</h3></th>
-						</tr>
-						<tr>
-							<th>Nome</th>
-							<th>Código</th>
-							<th>Linha</th>
-							<th>Faixa Etária</th>
-							<th>Alterar</th>
-						</tr>
-						<c:forEach var="lista" items="${ requestScope.todosJedi }">
+				<div class="col-lg-8 col-lg-offset-2">
+					<jsp:useBean id="categoria" scope="session" class="Bean.Categoria" />
+					<form action="AdmServlet?cmd=atualizar" method="post">
+						<table class="table table-striped">
 							<tr>
-								<td>${lista.nome}</td>
-								<td>${lista.categoriaId}</td>
-								<td>${lista.linha}</td>
-								<td>${lista.faixaEtaria}</td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/delete.png" alt="excluir categoria"></a></td>
+								<td>Nome:</td>
+								<td><input class="form-control" type="text" name="nome"
+									value="${categoria.nome}" id="name_categoria" readonly="readonly">
+								</td>
+								<td>ID:</td>
+								<td><input class="form-control" type="text" name="id"
+									value="${categoria.id}" id="id_categoria" readonly="readonly"></td>
+								<td>Faixa:</td>
+								<td><select
+									class="form-control" id="faixa"
+									name="faixa" value="${categoria.faixa}">
+									<option value="Todos">Todos</option>
+									<option value="_12">Até 12 anos</option>
+									<option value="3_12">3 a 12 anos</option>
+									<option value="6_15">6 a 15 anos</option>
+								</select></td>	
+								<td>Linha:</td>
+								<td><select
+									class="form-control" id="linha"
+									name="linha" value="${categoria.linha}">
+									<option value="Todos">Todos</option>
+									<option value="Meninos">Meninos</option>
+									<option value="Meninas">Meninas</option>
+								</select></td>	
 							</tr>
-						</c:forEach>
-					</table>
+							<tr>
+								<th colspan="2"><input type="submit"
+									class="btn btn-primary btn-lg" name="bVoltar"
+									value="Salvar" />   <a class="btn btn-default btn-lg" href="#" role="button">Voltar</a></th>
+								</tr>
+						</table>
+					</form>
 				</div>
+
+
+
+
+
+
 			</div>
 
 						</div>

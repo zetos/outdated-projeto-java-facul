@@ -50,7 +50,7 @@
 				<br>
 			<div class="row">
 				<div class="col-lg-12">
-					<!-- Lista Jedi -->
+					<!-- Lista Categorias -->
 
 					<table class="table table-striped">
 						<tr>
@@ -63,19 +63,20 @@
 							<th>Faixa Etária</th>
 							<th>Alterar</th>
 						</tr>
-						<c:forEach var="lista" items="${ requestScope.todosJedi }">
-							<tr>
-								<td>${lista.nome}</td>
-								<td>${lista.categoriaId}</td>
-								<td>${lista.linha}</td>
-								<td>${lista.faixaEtaria}</td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
-								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/delete.png" alt="excluir categoria"></a></td>
+						<c:forEach var="lista" items="${ requestScope.todasCategorias }">
+						<tr>
+							<td>${lista.nome}</td>
+							<td>${lista.categoriaId}</td>
+							<td>${lista.linha}</td>
+							<td>${lista.faixaEtaria}</td>
+							<td><a href=""><img
+								class="img-responsive" src="resources/imgs/outros/edit.png" alt="editar categoria"></a>
+								<<a href=""><img
+								class="img-responsive" src="resources/imgs/outros/delete.png" alt="excluir categoria"></a></td>
 							</tr>
 						</c:forEach>
 					</table>
+					<!-- end Lista Categorias -->
 				</div>
 			</div>
 
@@ -130,7 +131,7 @@
 											class="form-group col-xs-12 floating-label-form-group controls">
 											<label>Nome da Categoria:</label> <input type="text"
 												class="form-control" placeholder="Nome da Categoria"
-												name="txtNome" id="name_categoria" required
+												name="nome" id="name_categoria" required
 												data-validation-required-message="Por favor insira o nome da categoria.">
 										</div>
 									</div>
@@ -138,8 +139,8 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Linha:</label> <select
-												class="form-control" placeholder="Sexo" id="categoria"
-												name="txtlinha" required
+												class="form-control" id="categoria"
+												name="linha" required
 												data-validation-required-message="Por favor insira a linha.">
 												<option value="Todos">Todos</option>
 												<option value="Meninos">Meninos</option>
@@ -151,8 +152,8 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Faixa Etária:</label> <select
-												class="form-control" placeholder="Sexo" id="faixa_etaria"
-												name="txtfaixa" required
+												class="form-control" id="faixa_etaria"
+												name="faixa" required
 												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
 												<option value="_12">Até 12 anos</option>
