@@ -43,40 +43,33 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Loja de brinquedos Asiaticos</h1>
-						<p>This template has a responsive menu toggling system. The
-							menu will appear collapsed on smaller screens, and will appear
-							non-collapsed on larger screens. When toggled using the button
-							below, the menu will appear/disappear. On small screens, the page
-							content will be pushed off canvas.</p>
-							<span class="promocao">
-								<p>
-									Aproveite nossa Promoção: Leve três, pague quatro!</span>
-								</p>
-							</span>
+						<span class="promocao">
+							Aproveite nossa Promoção: Leve três, pague quatro!
+						</span>
 					</div>
-					<br>
-					<hr>
-					<br>
-							<!-- Brinquedos -->
+				</div>
+				<br>
+				<hr>
+				<br>
+				<!-- Brinquedos -->
+				<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }" varStatus="number">
+					<div class="col-md-4 product">
+						<img src="${brinquedo.img}" class="img-responsive product-image"
+							alt="${brinquedo.descricao}"> <br>
+						<span class="product product-name">${brinquedo.nome}</span>
+						<span class="product product-description">${brinquedo.descricao}</span>
+						<span class="product product-price">R$ ${brinquedo.preco}</span> 
+						<span class="product product-details"><a href="#">+Detalhes</a></span>
+					</div>
+					<c:if test="${ number.count % 3 == 0 }"><div class="row col-md-12"><hr></div></c:if>
+				</c:forEach>
+				<!-- Fim_Brinquedos -->
+			</div>
 
-						<c:forEach var="brinquedo" items="${ requestScope.todosJedi }">
-							<div class="col-md-4 product">
-								<img src="${brinquedo.imagem}" class="img-responsive product-image" alt="${brinquedo.descricao}">
-								<br>
-								<span class="product product-name"><p>${brinquedo.nome}</p></span>
-								<span class="product product-description"><p>${brinquedo.descricao}</p></span>
-								<span class="product product-price">${brinquedo.preco}</span>
-								<span class="product product-details"><p><a href="#">+Detalhes</a></p></span>
-							</div>
-						</c:forEach>
-							<!-- Fim_Brinquedos -->
-							
-							</div>
-						</div>
+			<!-- /#page-content-wrapper -->
+		</div>
 
-		<!-- /#page-content-wrapper -->
 	</div>
-
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
@@ -90,8 +83,7 @@
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
 		});
-	</script>
-
+</script>
 </body>
 
 </html>

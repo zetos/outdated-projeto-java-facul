@@ -25,15 +25,17 @@ public class HomeServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher rd = null;
-
+		
 		String categoriaId = request.getParameter("categoriaId");
 
 		try {
-			request.setAttribute("todasCategorias", daoCategoria.listarCategorias());
+			daoCategoria = new CategoriaDAO();
+			daoProduto = new ProdutoDAO();
+			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
 			if (categoriaId == null) {
-				request.setAttribute("todosProdutos", daoProduto.listarProdutos());
+				request.setAttribute("listarProdutos", daoProduto.listarProdutos());
 			} else {
-				request.setAttribute("todosProdutos", daoProduto.listarProdutos(Integer.parseInt(categoriaId)));
+				request.setAttribute("listarProdutos", daoProduto.listarProdutos(Integer.parseInt(categoriaId)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
