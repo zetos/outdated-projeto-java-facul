@@ -156,9 +156,9 @@
 												class="form-control" id="faixa_etaria" name="faixa" required
 												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
-												<option value="_12">Até 12 anos</option>
-												<option value="3_12">3 a 12 anos</option>
-												<option value="6_15">6 a 15 anos</option>
+												<option value="Até 12 anos">Até 12 anos</option>
+												<option value="3 a 12 anos">3 a 12 anos</option>
+												<option value="6 a 15 anos">6 a 15 anos</option>
 											</select>
 										</div>
 									</div>
