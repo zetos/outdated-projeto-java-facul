@@ -22,26 +22,30 @@ public class AlterarServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher rd = null;
 
 		String categoriaId = request.getParameter("categoriaId");
 
-		try {
-			daoCategoria = new CategoriaDAO();
-			request.setAttribute("categoria", daoCategoria.procurar(Integer.parseInt(categoriaId)));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		if (categoriaId == null) {
+			rd = request.getRequestDispatcher("/CategoriaListar");
+		} else {
+			try {
+				daoCategoria = new CategoriaDAO();
+				request.setAttribute("categoria", daoCategoria.procurar(Integer.parseInt(categoriaId)));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-		rd = request.getRequestDispatcher("adm/categoria/alterar.jsp");
+			rd = request.getRequestDispatcher("adm/categoria/alterar.jsp");
+		}
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		response.setContentType("text/html;charset=UTF-8");
 		RequestDispatcher rd = null;
 
