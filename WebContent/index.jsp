@@ -53,15 +53,16 @@
 				<br>
 				<!-- Brinquedos -->
 				<div class="row">
-					<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }">
+					<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }" varStatus="number">
 						<div class="col-md-4 product">
 							<img src="${brinquedo.img}" class="img-responsive product-image"
-								alt="${brinquedo.descricao}" width=200px height=120px> <br>
-							<span class="product product-name">${brinquedo.nome}</span> <span
-								class="product product-description">${brinquedo.descricao}</span>
-							<span class="product product-price">${brinquedo.preco}</span> <span
-								class="product product-details"><a href="#">+Detalhes</a></span>
+								alt="${brinquedo.descricao}"> <br>
+							<span class="product product-name">${brinquedo.nome}</span>
+							<span class="product product-description">${brinquedo.descricao}</span>
+							<span class="product product-price">R$ ${brinquedo.preco}</span> 
+							<span class="product product-details"><a href="#">+Detalhes</a></span>
 						</div>
+						<c:if test="${ number.count % 3 == 0 }"><div class="row col-md-12"><hr></div></c:if>
 					</c:forEach>
 				</div>
 				<!-- Fim_Brinquedos -->
