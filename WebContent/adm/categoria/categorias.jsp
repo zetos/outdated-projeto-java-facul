@@ -71,10 +71,11 @@
 									<td>${lista.categoriaId}</td>
 									<td>${lista.linha}</td>
 									<td>${lista.faixaEtaria}</td>
-									<td><a href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img class="img-responsive"
-											src="resources/imgs/outros/edit.png" alt="editar categoria"></a>
-										<a href=""><img class="img-responsive"
-											src="resources/imgs/outros/delete.png"
+									<td><a
+										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
+											class="img-responsive" src="resources/imgs/outros/edit.png"
+											alt="editar categoria"></a> <a href=""><img
+											class="img-responsive" src="resources/imgs/outros/delete.png"
 											alt="excluir categoria"></a></td>
 								</tr>
 							</c:forEach>
