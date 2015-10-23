@@ -22,6 +22,11 @@
 <link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="../../resources/css/style.css" rel="stylesheet">
 
+<!-- Gambiarra -->
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+<link href="resources/css/simple-sidebar.css" rel="stylesheet">
+<link href="resources/css/style.css" rel="stylesheet">
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -186,6 +191,10 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../../resources/js/bootstrap.min.js"></script>
+
+	<!-- Gambiarra -->
+	<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 
 	<!-- Menu Toggle Script -->
 	<script>
