@@ -16,16 +16,15 @@
 <title>Loja de brinquedos - Categorias</title>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 
 <!-- Custom CSS -->
-<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
-<link href="../../resources/css/style.css" rel="stylesheet">
-
-<!-- Gambiarra -->
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 <link href="resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="resources/css/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
+<link href="../../resources/css/style.css" rel="stylesheet">
 
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

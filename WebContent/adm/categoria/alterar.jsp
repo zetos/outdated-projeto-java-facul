@@ -16,11 +16,11 @@
 <title>Loja de brinquedos - Editar Categoria</title>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/bootstrap.min.css">
 
 <!-- Custom CSS -->
-<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
-<link href="../../resources/css/style.css" rel="stylesheet">
+<link href="resources/css/simple-sidebar.css" rel="stylesheet">
+<link href="resources/css/style.css" rel="stylesheet">
 
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -94,10 +94,10 @@
 
 
 	<!-- jQuery -->
-	<script src="../../resources/js/jquery.js"></script>
+	<script src="resources/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
 
 	<!-- Menu Toggle Script -->
 	<script>
