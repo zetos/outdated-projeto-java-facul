@@ -46,8 +46,10 @@ footer {
 }
 
 .product-description{
-	height: 25px !important;
-    overflow: hidden !important;
+	height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     color: #666;
     font-weight: normal;
     font-size: 14px;
