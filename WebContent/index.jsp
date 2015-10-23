@@ -43,23 +43,9 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Loja de brinquedos Asiaticos</h1>
-						<p>This template has a responsive menu toggling system. The
-							menu will appear collapsed on smaller screens, and will appear
-							non-collapsed on larger screens. When toggled using the button
-							below, the menu will appear/disappear. On small screens, the page
-							content will be pushed off canvas.</p>
-<<<<<<< HEAD
-						<p>
-							Make sure to keep all page content within the
-							<code>#page-content-wrapper</code>.
-						</p>
-=======
-							<span class="promocao">
-								<p>
-									Aproveite nossa Promoção: Leve três, pague quatro!</span>
-								</p>
-							</span>
->>>>>>> 42e4d84cdb3673faeb5c8ebbeb6f187b304dcd1d
+						<span class="promocao">
+							Aproveite nossa Promoção: Leve três, pague quatro!
+						</span>
 					</div>
 				</div>
 				<br>
@@ -69,18 +55,19 @@
 				<div class="row">
 					<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }">
 						<div class="col-md-4 product">
-							<img src="${brinquedo.img}" class="img-responsive product-image" alt="${brinquedo.descricao}" width=200px height=120px> <br> 
-							<span class="product product-name">${brinquedo.nome}</span> 
-							<span class="product product-description">${brinquedo.descricao}</span>
-							<span class="product product-price">${brinquedo.preco}</span> 
-							<span class="product product-details"><a href="#">+Detalhes</a></span>
+							<img src="${brinquedo.img}" class="img-responsive product-image"
+								alt="${brinquedo.descricao}" width=200px height=120px> <br>
+							<span class="product product-name">${brinquedo.nome}</span> <span
+								class="product product-description">${brinquedo.descricao}</span>
+							<span class="product product-price">${brinquedo.preco}</span> <span
+								class="product product-details"><a href="#">+Detalhes</a></span>
 						</div>
 					</c:forEach>
 				</div>
 				<!-- Fim_Brinquedos -->
 			</div>
 
-		<!-- /#page-content-wrapper -->
+			<!-- /#page-content-wrapper -->
 		</div>
 
 	</div>
