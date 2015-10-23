@@ -1,3 +1,5 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -32,9 +34,9 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><a href="#"> Categorias </a></li>
-			<li><a href="#">Todos</a></li>
+			<li><a href="Home">Todos</a></li>
 			<c:forEach var="lista" items="${ requestScope.listarCategorias }">
-				<li><a href="#">${lista.nome}</a></li>
+				<li><a href="Home?categoriaId=${lista.categoriaId}"> ${lista.nome} </a></li>
 			</c:forEach>
 		</ul>
 	</div>

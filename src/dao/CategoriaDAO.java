@@ -91,8 +91,6 @@ public class CategoriaDAO {
 			return categoria;
 		} catch (SQLException sqle) {
 			throw new Exception(sqle);	
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
 

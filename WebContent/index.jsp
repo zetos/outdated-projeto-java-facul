@@ -50,33 +50,32 @@
 							content will be pushed off canvas.</p>
 						<p>
 							Make sure to keep all page content within the
-							<code>#page-content-wrapper</code>
-							.
+							<code>#page-content-wrapper</code>.
 						</p>
 					</div>
-					<br>
-					<hr>
-					<br>
-							<!-- Brinquedos -->
-
-						<c:forEach var="brinquedo" items="${ requestScope.todosJedi }">
-							<div class="col-md-4 product">
-								<img src="${brinquedo.imagem}" class="img-responsive product-image" alt="${brinquedo.descricao}">
-								<br>
-								<span class="product product-name"><p>${brinquedo.nome}</p></span>
-								<span class="product product-description"><p>${brinquedo.descricao}</p></span>
-								<span class="product product-price">${brinquedo.preco}</span>
-								<span class="product product-details"><p><a href="#">+Detalhes</a></p></span>
-							</div>
-						</c:forEach>
-							<!-- Fim_Brinquedos -->
-							
-							</div>
+				</div>
+				<br>
+				<hr>
+				<br>
+				<!-- Brinquedos -->
+				<div class="row">
+					<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }">
+						<div class="col-md-4 product">
+							<img src="${brinquedo.img}" class="img-responsive product-image" alt="${brinquedo.descricao}" width=200px height=120px> <br> 
+							<span class="product product-name">${brinquedo.nome}</span> 
+							<span class="product product-description">${brinquedo.descricao}</span>
+							<span class="product product-price">${brinquedo.preco}</span> 
+							<span class="product product-details"><a href="#">+Detalhes</a></span>
 						</div>
+					</c:forEach>
+				</div>
+				<!-- Fim_Brinquedos -->
+			</div>
 
 		<!-- /#page-content-wrapper -->
-	</div>
+		</div>
 
+	</div>
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
@@ -91,7 +90,6 @@
 			$("#wrapper").toggleClass("toggled");
 		});
 	</script>
-
 </body>
 
 </html>

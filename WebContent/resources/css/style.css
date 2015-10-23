@@ -47,7 +47,8 @@ footer {
 }
 
 .product-image{
-	size: 150px;
+    width: 250px;
+    height: 300px;
 	padding-bottom: 0;
 	line-height: 1.42857143;
     margin-left: auto;

@@ -95,7 +95,8 @@ public class ProdutoDAO {
 				produto.setNome(rs.getString(2));
 				produto.setDescricao(rs.getString(3));
 				produto.setPreco(rs.getString(4));
-				produto.setCategoria(categoriaDAO.procurar(rs.getInt(5)));
+				produto.setImg(rs.getString(5));
+				produto.setCategoria(categoriaDAO.procurar(rs.getInt(6)));
 			}
 			return produto;
 		} catch (SQLException sqle) {
@@ -117,7 +118,7 @@ public class ProdutoDAO {
 				String descricao = rs.getString(3);
 				String preco = rs.getString(4);
 				String img = rs.getString(5);
-				Categoria categoria = categoriaDAO.procurar(rs.getInt(5));
+				Categoria categoria = categoriaDAO.procurar(rs.getInt(6));
 				list.add(new Produto(produtoId, nome, descricao, preco, img, categoria));
 			}
 			return list;
@@ -141,7 +142,7 @@ public class ProdutoDAO {
 				String descricao = rs.getString(3);
 				String preco = rs.getString(4);
 				String img = rs.getString(5);
-				Categoria categoria = categoriaDAO.procurar(rs.getInt(5));
+				Categoria categoria = categoriaDAO.procurar(rs.getInt(6));
 				list.add(new Produto(produtoId, nome, descricao, preco, img, categoria));
 			}
 			return list;
