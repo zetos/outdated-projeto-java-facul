@@ -18,10 +18,7 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="index.jsp">Logout</a></li>
+				<li><a href="#">Login</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -31,11 +28,10 @@
 	<!-- Sidebar -->
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
-			<li class="sidebar-brand"><a href="#"> Categorias </a></li>
-			<li><a href="#">Todos</a></li>
-			<c:forEach var="lista" items="${ requestScope.listarCategorias }">
-				<li><a href="#">${lista.nome}</a></li>
-			</c:forEach>
+			<li class="sidebar-brand"><a href="#"> ÁREA ADMINISTRATIVA </a></li>
+			<li><a href="#">Cadastro de Categorias</a></li>
+			<li><a href="#">Cadastro de Produtos</a></li>
+			<li><a href="#">Cadastro de Usuários</a></li>
 		</ul>
 	</div>
 	<!-- /#sidebar-wrapper -->
