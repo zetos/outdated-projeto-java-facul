@@ -122,15 +122,15 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="JediServlet" method="get" name="jediForm"
-									id="Form_jedi" novalidate>
+								<form action="AdmServlet" method="get" name="categoriaForm"
+									id="Form_categoria" novalidate>
 									<input type="hidden" name="cmd" value="incluir">
 									<div class="row control-group">
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
 											<label>Nome da Categoria:</label> <input type="text"
 												class="form-control" placeholder="Nome da Categoria"
-												name="txtNome" id="name_jedi" required
+												name="txtNome" id="name_categoria" required
 												data-validation-required-message="Por favor insira o nome da categoria.">
 										</div>
 									</div>
@@ -138,9 +138,9 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Linha:</label> <select
-												class="form-control" placeholder="Sexo" id="sex_jedi"
-												name="txtSexo" required
-												data-validation-required-message="Por favor insira o sexo do jedi.">
+												class="form-control" placeholder="Sexo" id="categoria"
+												name="txtlinha" required
+												data-validation-required-message="Por favor insira a linha.">
 												<option value="Todos">Todos</option>
 												<option value="Meninos">Meninos</option>
 												<option value="Meninas">Meninas</option>
@@ -151,9 +151,9 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Faixa Etária:</label> <select
-												class="form-control" placeholder="Sexo" id="sex_jedi"
-												name="txtSexo" required
-												data-validation-required-message="Por favor insira o sexo do jedi.">
+												class="form-control" placeholder="Sexo" id="faixa_etaria"
+												name="txtfaixa" required
+												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
 												<option value="_12">Até 12 anos</option>
 												<option value="3_12">3 a 12 anos</option>
