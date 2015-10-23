@@ -43,7 +43,6 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1>Lista de Categorias</h1>
-						<p>Seja objetivo na criação das mesmas. Evite redundancias.</p>
 					</div>
 
 				</div>
@@ -55,7 +54,7 @@
 
 					<table class="table table-striped">
 						<tr>
-							<th colspan="10"><h3>Categorias</h3></th>
+							<th colspan="5"><h3>Categorias</h3></th>
 						</tr>
 						<tr>
 							<th>Nome</th>
@@ -71,19 +70,116 @@
 								<td>${lista.linha}</td>
 								<td>${lista.faixaEtaria}</td>
 								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/edit.png" alt=""></a></td>
+										class="img-responsive" src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
 								<td><a href=""><img
-										class="img-responsive" src="resources/imgs/outros/delete.png" alt=""></a></td>
+										class="img-responsive" src="resources/imgs/outros/delete.png" alt="excluir categoria"></a></td>
 							</tr>
 						</c:forEach>
 					</table>
 				</div>
 			</div>
 
+			<!-- Adicionar categoria -->
+				<section id="registro">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center">
+					<h2>Adicione uma categoria</h2>
+					<h3>Seja objetivo na criação das mesmas. Evite redundancias.</h3>
+					<br>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<!-- MODAL botao -->
+					<button type="button" class="btn btn-primary btn-lg"
+						data-toggle="modal" data-target="#myModal">Adicionar</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
 						</div>
 
 		<!-- /#page-content-wrapper -->
 	</div>
+
+		<!-- MODAL inicio -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Adicione uma Categoria</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+								<form action="JediServlet" method="get" name="jediForm"
+									id="Form_jedi" novalidate>
+									<input type="hidden" name="cmd" value="incluir">
+									<div class="row control-group">
+										<div
+											class="form-group col-xs-12 floating-label-form-group controls">
+											<label>Nome da Categoria:</label> <input type="text"
+												class="form-control" placeholder="Nome da Categoria"
+												name="txtNome" id="name_jedi" required
+												data-validation-required-message="Por favor insira o nome da categoria.">
+										</div>
+									</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<label for="instituicao">Linha:</label> <select
+												class="form-control" placeholder="Sexo" id="sex_jedi"
+												name="txtSexo" required
+												data-validation-required-message="Por favor insira o sexo do jedi.">
+												<option value="Todos">Todos</option>
+												<option value="Meninos">Meninos</option>
+												<option value="Meninas">Meninas</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<label for="instituicao">Faixa Etária:</label> <select
+												class="form-control" placeholder="Sexo" id="sex_jedi"
+												name="txtSexo" required
+												data-validation-required-message="Por favor insira o sexo do jedi.">
+												<option value="Todos">Todos</option>
+												<option value="_12">Até 12 anos</option>
+												<option value="3_12">3 a 12 anos</option>
+												<option value="6_15">6 a 15 anos</option>
+											</select>
+										</div>
+									</div>
+									</div>
+									<br>
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<input type="submit" class="btn btn-primary btn-lg"
+												value="enviar"></input>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- div row -->
+						</div>
+						<!-- div container -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL1 END -->
 
 
 	<!-- jQuery -->
