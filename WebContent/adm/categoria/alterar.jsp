@@ -52,7 +52,7 @@
 			<div class="row">
 
 				<div class="col-lg-8 col-lg-offset-2">
-					<jsp:useBean id="categoria" scope="session" class="Bean.Categoria" />
+					<jsp:useBean id="categoria" scope="session" class="bean.Categoria" />
 					<form action="AdmServlet?cmd=atualizar" method="post">
 						<table class="table table-striped">
 							<tr>
