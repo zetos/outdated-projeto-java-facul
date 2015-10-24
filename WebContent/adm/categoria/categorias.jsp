@@ -22,6 +22,7 @@
 <link href="resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="resources/css/style.css" rel="stylesheet">
 
+<!-- Gambiarra -->
 <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
 <link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="../../resources/css/style.css" rel="stylesheet">
