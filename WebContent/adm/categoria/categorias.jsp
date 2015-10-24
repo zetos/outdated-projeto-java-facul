@@ -55,9 +55,9 @@
 					<div class="col-lg-12">
 						<!-- Lista Categorias -->
 
-						<table class="table">
+						<table class="table table-striped">
 							<tr>
-								<th colspan="5"><h3>Categorias</h3></th>
+								<th colspan="6"><h3>Categorias</h3></th>
 							</tr>
 							<tr>
 								<th>Nome</th>
@@ -65,6 +65,7 @@
 								<th>Linha</th>
 								<th>Faixa Etária</th>
 								<th>Alterar</th>
+								<th>Excluir</th>
 							</tr>
 							<c:forEach var="lista" items="${ requestScope.listarCategorias }">
 								<tr>
@@ -75,8 +76,9 @@
 									<td><a
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
-											alt="editar categoria"></a> <a href=""><img
-											class="img-responsive" src="resources/imgs/outros/delete.png"
+											alt="editar categoria"></a></td>
+									<td><a href=""><img class="img-responsive"
+											src="resources/imgs/outros/delete.png"
 											alt="excluir categoria"></a></td>
 								</tr>
 							</c:forEach>
@@ -205,24 +207,26 @@
 		});
 
 		//botao excluir
-		$("#excluirModal").on('click', function() {
-			var categoriaId = $("#categoriaId").val();
-			$.ajax({
-				// caminho servlet
-				url : "/ProjetoFinal/CategoriaExcluir",
-				type : "POST",
-				data : {
-					id : categoriaId
-				},
-				success : function() {
-					// esconder linha ta tabela
-					$('button[value=' + categoriaId + ']')
-							.closest('tr').fadeOut();
-					//modal esconder
-					$('#confirmation').modal("hide");
-				}
-			});
-		});
+		$("#excluirModal").on(
+				'click',
+				function() {
+					var categoriaId = $("#categoriaId").val();
+					$.ajax({
+						// caminho servlet
+						url : "/ProjetoFinal/CategoriaExcluir",
+						type : "POST",
+						data : {
+							id : categoriaId
+						},
+						success : function() {
+							// esconder linha ta tabela
+							$('button[value=' + categoriaId + ']')
+									.closest('tr').fadeOut();
+							//modal esconder
+							$('#confirmation').modal("hide");
+						}
+					});
+				});
 	</script>
 </body>
 
