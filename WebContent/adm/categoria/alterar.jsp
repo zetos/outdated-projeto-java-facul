@@ -22,6 +22,11 @@
 <link href="resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="resources/css/style.css" rel="stylesheet">
 
+<!-- Gambiarra -->
+<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
+<link href="../../resources/css/style.css" rel="stylesheet">
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -58,9 +63,13 @@
 									<td>Nome:</td>
 									<td><input class="form-control" type="text" name="nome"
 										value="${categoria.nome}" id="name_categoria"></td>
+									</tr>
+									<tr>
 									<td>ID:</td>
 									<td><input class="form-control" type="text" name="categoriaId"
 										value="${categoria.categoriaId}" id="id_categoria" readonly="readonly"></td>
+										</tr>
+										<tr>
 									<td>Faixa:</td>
 									<td><select class="form-control" id="faixa" name="faixaEtaria"
 										value="${categoria.faixaEtaria}">
@@ -69,6 +78,8 @@
 											<option value="3 a 12 anos">3 a 12 anos</option>
 											<option value="6 a 15 anos">6 a 15 anos</option>
 									</select></td>
+									</tr>
+									<tr>
 									<td>Linha:</td>
 									<td><select class="form-control" id="linha" name="linha"
 										value="${categoria.linha}" >
@@ -78,12 +89,17 @@
 									</select></td>
 								</tr>
 								<tr>
-									<th colspan="2"><input type="submit"
+									<th colspan="2">
+										<input type="submit"
 										class="btn btn-primary btn-lg editar-img" name="bVoltar" value="Salvar" />
-										<a class="btn btn-default btn-lg editar-img" href="#" role="button">Voltar</a></th>
+										<a class="btn btn-default btn-lg editar-img" href="#" role="button">Voltar</a>
+									</th>
 								</tr>
 							</table>
 						</form>
+																<!-- MODAL botao -->
+										<button type="button" class="btn btn-danger btn-lg"
+										data-toggle="modal" data-target="#myModal">Excluir</button>
 					</div>
 				</div>
 			</div>
@@ -91,10 +107,45 @@
 		</div>
 	</div>
 
+	<!-- MODAL inicio -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Excluir
+						Categoria</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+								<h1>Tem certeza que deseja excluir essa categoria?</h1>
+								<button type="button" class="btn btn-danger">Excluir</button>
+							</div>
+						</div>
+						<!-- div row -->
+					</div>
+					<!-- div container -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL1 END -->
+
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
+	<script src="resources/js/bootstrap.min.js"></script>
+
+		<!-- Gambiarra -->
+	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 
 	<!-- Menu Toggle Script -->
