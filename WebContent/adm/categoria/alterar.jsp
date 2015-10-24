@@ -72,7 +72,7 @@
 									</select></td>
 									<td>Linha:</td>
 									<td><select class="form-control" id="linha" name="linha"
-										value="${categoria.linha}">
+										value="${categoria.linha}" >
 											<option value="Todos">Todos</option>
 											<option value="Meninos">Meninos</option>
 											<option value="Meninas">Meninas</option>

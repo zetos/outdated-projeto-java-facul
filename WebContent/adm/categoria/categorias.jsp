@@ -130,9 +130,8 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="AdmServlet" method="post" name="categoriaForm"
+								<form action="/ProjetoFinal/CategoriaAdicionar" method="post" name="categoriaForm"
 									id="Form_categoria" novalidate>
-									<input type="hidden" name="cmd" value="incluir">
 									<div class="row control-group">
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
@@ -158,10 +157,10 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Faixa Etária:</label> <select
-												class="form-control" id="faixa_etaria" name="faixa" required
+												class="form-control" id="faixa_etaria" name="faixaEtaria" required
 												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
-												<option value="Até 12 anos">Até 12 anos</option>
+												<option value="Ate 12 anos">Até 12 anos</option>
 												<option value="3 a 12 anos">3 a 12 anos</option>
 												<option value="6 a 15 anos">6 a 15 anos</option>
 											</select>
