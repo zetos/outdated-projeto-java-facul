@@ -130,8 +130,8 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="/ProjetoFinal/CategoriaAdicionar" method="post" name="categoriaForm"
-									id="Form_categoria" novalidate>
+								<form action="/ProjetoFinal/CategoriaAdicionar" method="post"
+									name="categoriaForm" id="Form_categoria" novalidate>
 									<div class="row control-group">
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
@@ -157,7 +157,8 @@
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
 											<label for="instituicao">Faixa Etária:</label> <select
-												class="form-control" id="faixa_etaria" name="faixaEtaria" required
+												class="form-control" id="faixa_etaria" name="faixaEtaria"
+												required
 												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
 												<option value="Ate 12 anos">Até 12 anos</option>
@@ -200,6 +201,26 @@
 		$("#menu-toggle").click(function(e) {
 			e.preventDefault();
 			$("#wrapper").toggleClass("toggled");
+		});
+
+		//botao excluir
+		$("#excluirModal").on('click', function() {
+			var categoriaId = $("#categoriaId").val();
+			$.ajax({
+				// caminho servlet
+				url : "/ProjetoFinal/CategoriaExcluir",
+				type : "POST",
+				data : {
+					id : categoriaId
+				},
+				success : function() {
+					// esconder linha ta tabela
+					$('button[value=' + categoriaId + ']')
+							.closest('tr').fadeOut();
+					//modal esconder
+					$('#confirmation').modal("hide");
+				}
+			});
 		});
 	</script>
 </body>

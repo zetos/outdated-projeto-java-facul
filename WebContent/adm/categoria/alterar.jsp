@@ -45,7 +45,6 @@
 						<h1>Editar Categoria</h1>
 						<p>Atenção na hora de editar e cuidado na hora de excluir.</p>
 					</div>
-
 				</div>
 				<hr>
 				<br>
@@ -91,7 +90,6 @@
 			<!-- /#page-content-wrapper -->
 		</div>
 	</div>
-
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
