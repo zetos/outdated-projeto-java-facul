@@ -207,7 +207,7 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 								<h1>Tem certeza que deseja excluir essa categoria?</h1>
-								<button type="button" class="btn btn-danger">Excluir</button>
+								<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
 							</div>
 						</div>
 						<!-- div row -->
