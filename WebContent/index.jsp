@@ -13,7 +13,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Loja de brinquedos</title>
+<title>Brinquedos Asiaticos</title>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -42,7 +42,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Loja de brinquedos Asiaticos</h1>
+						<h1>Brinquedos Asiaticos</h1>
 						<span class="promocao">
 							Aproveite nossa Promoção: Leve três, pague quatro!
 						</span>
