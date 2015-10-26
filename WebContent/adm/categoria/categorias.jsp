@@ -77,9 +77,9 @@
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
 											alt="editar categoria"></a></td>
-									<td><a href=""><img class="img-responsive"
-											src="resources/imgs/outros/delete.png"
-											alt="excluir categoria"></a></td>
+									<td><input data-toggle="modal" data-target="#excluirModal" type="image" class="img-responsive"
+										src="resources/imgs/outros/delete.png" alt="excluir categoria" />
+									</td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -188,6 +188,36 @@
 		</div>
 	</div>
 	<!-- MODAL1 END -->
+	
+	<!-- MODAL 2 INICIO -->
+	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+								<h1>Tem certeza que deseja excluir essa categoria?</h1>
+								<button type="button" class="btn btn-danger">Excluir</button>
+							</div>
+						</div>
+						<!-- div row -->
+					</div>
+					<!-- div container -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL2 END -->
 
 	<!-- jQuery -->
 	<script src="../../resources/js/jquery.js"></script>
@@ -201,32 +231,34 @@
 
 	<!-- Menu Toggle Script -->
 	<script>
-		$("#menu-toggle").click(function(e) {
-			e.preventDefault();
-			$("#wrapper").toggleClass("toggled");
-		});
+		(function() {
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
 
-		//botao excluir
-		$("#excluirModal").on(
-				'click',
-				function() {
-					var categoriaId = $("#categoriaId").val();
-					$.ajax({
-						// caminho servlet
-						url : "/ProjetoFinal/CategoriaExcluir",
-						type : "POST",
-						data : {
-							id : categoriaId
-						},
-						success : function() {
-							// esconder linha ta tabela
-							$('button[value=' + categoriaId + ']')
-									.closest('tr').fadeOut();
-							//modal esconder
-							$('#confirmation').modal("hide");
-						}
+			//botao excluir
+			$("#excluirModal").on(
+					'click',
+					function() {
+						var categoriaId = $("#categoriaId").val();
+						$.ajax({
+							// caminho servlet
+							url : "/ProjetoFinal/CategoriaExcluir",
+							type : "POST",
+							data : {
+								id : categoriaId
+							},
+							success : function() {
+								// esconder linha ta tabela
+								$('button[value=' + categoriaId + ']').closest(
+										'tr').fadeOut();
+								//modal esconder
+								$('#confirmation').modal("hide");
+							}
+						});
 					});
-				});
+		});
 	</script>
 </body>
 

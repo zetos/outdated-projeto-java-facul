@@ -97,45 +97,12 @@
 								</tr>
 							</table>
 						</form>
-						<!-- MODAL botao -->
-						<button type="button" class="btn btn-danger btn-lg"
-							data-toggle="modal" data-target="#myModal">Excluir</button>
 					</div>
 				</div>
 			</div>
 			<!-- /#page-content-wrapper -->
 		</div>
 	</div>
-
-	<!-- MODAL inicio -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
-				</div>
-				<div class="modal-body">
-					<!-- MODAL corpo -->
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-								<h1>Tem certeza que deseja excluir essa categoria?</h1>
-								<button type="button" class="btn btn-danger">Excluir</button>
-							</div>
-						</div>
-						<!-- div row -->
-					</div>
-					<!-- div container -->
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- MODAL1 END -->
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
