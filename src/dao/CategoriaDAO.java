@@ -36,8 +36,6 @@ public class CategoriaDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 	
@@ -54,24 +52,17 @@ public class CategoriaDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao alterar dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 
-	public void excluir(Categoria categoria) throws Exception {
-		if (categoria == null)
-			throw new Exception("O valor passado nao pode ser nulo");
-		
+	public void excluir(int categoriaId) throws Exception {
 		try {
 			String SQL = "DELETE FROM categoria WHERE categoriaId=?";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, categoria.getCategoriaId());
+			ps.setInt(1, categoriaId);
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao excluir dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 	
@@ -109,8 +100,6 @@ public class CategoriaDAO {
 			return list;
 		} catch (SQLException sqle) {
 			throw new Exception(sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
 }

@@ -11,19 +11,20 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Brinquedos Asiaticos</a>
+			<a class="navbar-brand" href="/ProjetoFinal/Home">Brinquedos
+				Asiaticos</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="index.jsp">Logout</a></li>
-          </ul>
-        </li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-haspopup="true"
+					aria-expanded="false">Administrador <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="index.jsp">Logout</a></li>
+					</ul></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -46,7 +47,8 @@
 <footer class="panel-footer">
 	<div id="footer">
 		<div class="container">
-			<div class="col-lg-12 text-center">Copyright &copy; Asia Corp 2015</div>
+			<div class="col-lg-12 text-center">Copyright &copy; Asia Corp
+				2015</div>
 		</div>
 	</div>
 </footer>

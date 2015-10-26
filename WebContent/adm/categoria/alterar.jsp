@@ -50,12 +50,10 @@
 						<h1>Editar Categoria</h1>
 						<p>Atenção na hora de editar e cuidado na hora de excluir.</p>
 					</div>
-
 				</div>
 				<hr>
 				<br>
 				<div class="row">
-
 					<div class="col-lg-8 col-lg-offset-2">
 						<jsp:useBean id="categoria" scope="session" class="bean.Categoria" />
 						<form action="/ProjetoFinal/CategoriaAlterar" method="post">
@@ -64,23 +62,24 @@
 									<td>Nome:</td>
 									<td><input class="form-control" type="text" name="nome"
 										value="${categoria.nome}" id="name_categoria"></td>
-									</tr>
-									<tr>
+								</tr>
+								<tr>
 									<td>ID:</td>
-									<td><input class="form-control" type="text" name="categoriaId"
-										value="${categoria.categoriaId}" id="id_categoria" readonly="readonly"></td>
-										</tr>
-										<tr>
+									<td><input class="form-control" type="text"
+										name="categoriaId" value="${categoria.categoriaId}"
+										id="id_categoria" readonly="readonly"></td>
+								</tr>
+								<tr>
 									<td>Faixa:</td>
-									<td><select class="form-control" id="faixa" name="faixaEtaria"
-										value="${categoria.faixaEtaria}">
+									<td><select class="form-control" id="faixa"
+										name="faixaEtaria" value="${categoria.faixaEtaria}">
 											<option value="Todos">Todos</option>
 											<option value="Até 12 anos">Até 12 anos</option>
 											<option value="3 a 12 anos">3 a 12 anos</option>
 											<option value="6 a 15 anos">6 a 15 anos</option>
 									</select></td>
-									</tr>
-									<tr>
+								</tr>
+								<tr>
 									<td>Linha:</td>
 									<td><select class="form-control" id="linha" name="linha"
 										value="${categoria.linha}">
@@ -90,11 +89,11 @@
 									</select></td>
 								</tr>
 								<tr>
-									<th colspan="2">
-										<input type="submit"
-										class="btn btn-primary btn-lg editar-img" name="bVoltar" value="Salvar" />
-										<a class="btn btn-default btn-lg editar-img" href="#" role="button">Voltar</a>
-									</th>
+									<th colspan="2"><input type="submit"
+										class="btn btn-primary btn-lg editar-img" name="bVoltar"
+										value="Salvar" /> <a
+										class="btn btn-default btn-lg editar-img" href="#"
+										role="button">Voltar</a></th>
 								</tr>
 							</table>
 						</form>
@@ -105,15 +104,10 @@
 		</div>
 	</div>
 
-
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="resources/js/bootstrap.min.js"></script>
-
-		<!-- Gambiarra -->
-	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script>
 
 	<!-- Menu Toggle Script -->
