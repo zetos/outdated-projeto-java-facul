@@ -13,7 +13,11 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
+<<<<<<< HEAD
 			<a class="navbar-brand" href="/ProjetoFinal/Home">Brand</a>
+=======
+			<a class="navbar-brand" href="#">Brinquedos Asiaticos</a>
+>>>>>>> bfdef05d92a18d12ef65fb3139ad1fdda7b19563
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
