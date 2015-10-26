@@ -54,17 +54,13 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<!-- Lista Categorias -->
-
-						<table class="table">
-							<tr>
-								<th colspan="5"><h3>Categorias</h3></th>
-							</tr>
+						<table class="table table-striped">
 							<tr>
 								<th>Nome</th>
 								<th>Código</th>
 								<th>Linha</th>
 								<th>Faixa Etária</th>
-								<th>Alterar</th>
+								<th colspan="5">Alterar</th>
 							</tr>
 							<c:forEach var="lista" items="${ requestScope.listarCategorias }">
 								<tr>
@@ -75,7 +71,7 @@
 									<td><a
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
-											alt="editar categoria"></a> <a href="#myModal2"><img
+											alt="editar categoria"></a><a href="#myModal2" data-toggle="modal"><img
 											class="img-responsive" src="resources/imgs/outros/delete.png"
 											alt="excluir categoria"></a></td>
 								</tr>
