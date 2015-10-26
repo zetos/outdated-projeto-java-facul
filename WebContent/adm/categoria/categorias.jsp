@@ -75,7 +75,7 @@
 									<td><a
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
-											alt="editar categoria"></a> <a href=""><img
+											alt="editar categoria"></a> <a href="#myModal2"><img
 											class="img-responsive" src="resources/imgs/outros/delete.png"
 											alt="excluir categoria"></a></td>
 								</tr>
@@ -112,80 +112,111 @@
 		<!-- /#page-content-wrapper -->
 	</div>
 
-	<!-- MODAL inicio -->
+	<!-- MODAL1 inicio -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Adicione uma
-						Categoria</h4>
-				</div>
-				<div class="modal-body">
-					<!-- MODAL corpo -->
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<h4 class="modal-title" id="myModalLabel">Adicione uma
+				Categoria</h4>
+			</div>
+			<div class="modal-body">
+				<!-- MODAL corpo -->
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="AdmServlet" method="post" name="categoriaForm"
-									id="Form_categoria" novalidate>
-									<input type="hidden" name="cmd" value="incluir">
-									<div class="row control-group">
-										<div
-											class="form-group col-xs-12 floating-label-form-group controls">
-											<label>Nome da Categoria:</label> <input type="text"
-												class="form-control" placeholder="Nome da Categoria"
-												name="nome" id="name_categoria" required
-												data-validation-required-message="Por favor insira o nome da categoria.">
-										</div>
-									</div>
-
-									<div class="row control-group">
-										<div class="form-group col-xs-12 controls">
-											<label for="instituicao">Linha:</label> <select
-												class="form-control" id="categoria" name="linha" required
-												data-validation-required-message="Por favor insira a linha.">
-												<option value="Todos">Todos</option>
-												<option value="Meninos">Meninos</option>
-												<option value="Meninas">Meninas</option>
-											</select>
-										</div>
-									</div>
-
-									<div class="row control-group">
-										<div class="form-group col-xs-12 controls">
-											<label for="instituicao">Faixa Etária:</label> <select
-												class="form-control" id="faixa_etaria" name="faixa" required
-												data-validation-required-message="Por favor insira a faixa etária.">
-												<option value="Todos">Todos</option>
-												<option value="Até 12 anos">Até 12 anos</option>
-												<option value="3 a 12 anos">3 a 12 anos</option>
-												<option value="6 a 15 anos">6 a 15 anos</option>
-											</select>
-										</div>
-									</div>
-									<br>
-									<div class="row control-group">
-										<div class="form-group col-xs-12 controls">
-											<input type="submit" class="btn btn-primary btn-lg"
-												value="enviar"></input>
-										</div>
-									</div>
-								</form>
+							<form action="AdmServlet" method="post" name="categoriaForm"
+							id="Form_categoria" novalidate>
+							<input type="hidden" name="cmd" value="incluir">
+							<div class="row control-group">
+								<div
+								class="form-group col-xs-12 floating-label-form-group controls">
+								<label>Nome da Categoria:</label> <input type="text"
+								class="form-control" placeholder="Nome da Categoria"
+								name="nome" id="name_categoria" required
+								data-validation-required-message="Por favor insira o nome da categoria.">
 							</div>
 						</div>
-						<!-- div row -->
+
+						<div class="row control-group">
+							<div class="form-group col-xs-12 controls">
+								<label for="instituicao">Linha:</label> <select
+								class="form-control" id="categoria" name="linha" required
+								data-validation-required-message="Por favor insira a linha.">
+								<option value="Todos">Todos</option>
+								<option value="Meninos">Meninos</option>
+								<option value="Meninas">Meninas</option>
+							</select>
+						</div>
 					</div>
-					<!-- div container -->
+
+					<div class="row control-group">
+						<div class="form-group col-xs-12 controls">
+							<label for="instituicao">Faixa Etária:</label> <select
+							class="form-control" id="faixa_etaria" name="faixa" required
+							data-validation-required-message="Por favor insira a faixa etária.">
+							<option value="Todos">Todos</option>
+							<option value="Até 12 anos">Até 12 anos</option>
+							<option value="3 a 12 anos">3 a 12 anos</option>
+							<option value="6 a 15 anos">6 a 15 anos</option>
+						</select>
+					</div>
 				</div>
-			</div>
+				<br>
+				<div class="row control-group">
+					<div class="form-group col-xs-12 controls">
+						<input type="submit" class="btn btn-primary btn-lg"
+						value="enviar"></input>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
-	<!-- MODAL1 END -->
+	<!-- div row -->
+</div>
+<!-- div container -->
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL1 END -->
+
+<!-- MODAL2 inicio -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel">
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+			aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<h4 class="modal-title" id="myModalLabel">Excluir
+			Categoria</h4>
+		</div>
+		<div class="modal-body">
+			<!-- MODAL corpo -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+						<h1>Tem certeza que deseja excluir essa categoria?</h1>
+						<button type="button" class="btn btn-danger">Excluir</button>
+					</div>
+				</div>
+				<!-- div row -->
+			</div>
+			<!-- div container -->
+		</div>
+	</div>
+</div>
+</div>
+<!-- MODAL2 END -->
 
 	<!-- jQuery -->
 	<script src="../../resources/js/jquery.js"></script>
