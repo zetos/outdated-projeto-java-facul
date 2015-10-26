@@ -104,10 +104,6 @@
 		</div>
 	</div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 26f5775fddddb0a65050dc6c4a43eb1c9e66be3c
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
 

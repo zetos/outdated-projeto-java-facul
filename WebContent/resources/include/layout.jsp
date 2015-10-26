@@ -13,18 +13,15 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-<<<<<<< HEAD
-			<a class="navbar-brand" href="/ProjetoFinal/Home">Brand</a>
-=======
-			<a class="navbar-brand" href="#">Brinquedos Asiaticos</a>
->>>>>>> bfdef05d92a18d12ef65fb3139ad1fdda7b19563
+			<a class="navbar-brand" href="/ProjetoFinal/Home">Brinquedos
+				Asiaticos</a>
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-       <li><a href="#">Login</a></li>
+				<li><a href="#">Login</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
@@ -37,7 +34,8 @@
 			<li class="sidebar-brand"><a href="#"> Categorias </a></li>
 			<li><a href="Home">Todos</a></li>
 			<c:forEach var="lista" items="${ requestScope.listarCategorias }">
-				<li><a href="Home?categoriaId=${lista.categoriaId}"> ${lista.nome} </a></li>
+				<li><a href="Home?categoriaId=${lista.categoriaId}">
+						${lista.nome} </a></li>
 			</c:forEach>
 		</ul>
 	</div>
@@ -48,7 +46,8 @@
 <footer class="panel-footer">
 	<div id="footer">
 		<div class="container">
-			<div class="col-lg-12 text-center">Copyright &copy; Asia Corp 2015</div>
+			<div class="col-lg-12 text-center">Copyright &copy; Asia Corp
+				2015</div>
 		</div>
 	</div>
 </footer>
