@@ -19,7 +19,8 @@ public class ProdutoServlet extends HttpServlet {
 	private ProdutoDAO dao;
 	private Produto produto;
 
-	public ProdutoServlet() {
+	public ProdutoServlet() throws Exception {
+		dao = new ProdutoDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

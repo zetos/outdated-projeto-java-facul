@@ -36,6 +36,7 @@
 	<div id="wrapper">
 		<!-- Page Layout -->
 		<jsp:include page="resources/include/layout.jsp" flush="true"></jsp:include>
+		<jsp:useBean id="produto" scope="session" class="bean.Produto" />
 
 		<!-- Page Content -->
 		<div id="page-content-wrapper">
@@ -50,11 +51,11 @@
 				<br>
 				<!-- Brinquedo -->
 				<div class="col-md-12 product">
-					<img src="${brinquedo.img}" class="img-responsive product-image"
-					alt="${brinquedo.descricao}"><br>
-					<span class="product product-name">${brinquedo.nome}</span>
-					<span class="product product-description">${brinquedo.descricao}</span>
-					<span class="product product-price">R$ ${brinquedo.preco}</span>
+					<img src="${produto.img}" class="img-responsive product-image"
+					alt="${produto.descricao}"><br>
+					<span class="product product-name">${produto.nome}</span>
+					<span class="product product-description">${produto.descricao}</span>
+					<span class="product product-price">R$ ${produto.preco}</span>
 
 					<button type="button" class="btn-lg btn-success">Comprar</button>
 				</div>
