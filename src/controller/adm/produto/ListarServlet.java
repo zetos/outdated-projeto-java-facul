@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
 import dao.ProdutoDAO;
+import util.Imagem;
 
 @WebServlet("/ProdutoListar")
 public class ListarServlet extends HttpServlet {
@@ -29,6 +30,8 @@ public class ListarServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 
 		try {
+			Imagem img = new Imagem();
+			request.setAttribute("listarImagens", img.getImagens());
 			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
 			request.setAttribute("listarProdutos", daoProduto.listarProdutos());
 		} catch (Exception e) {
