@@ -40,8 +40,6 @@ public class ProdutoDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao inserir dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 	
@@ -61,8 +59,6 @@ public class ProdutoDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao alterar dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 
@@ -74,8 +70,6 @@ public class ProdutoDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao excluir dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 	
@@ -98,8 +92,6 @@ public class ProdutoDAO {
 			return produto;
 		} catch (SQLException sqle) {
 			throw new Exception(sqle);	
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
 
@@ -121,8 +113,6 @@ public class ProdutoDAO {
 			return list;
 		} catch (SQLException sqle) {
 			throw new Exception(sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
 	
@@ -145,8 +135,6 @@ public class ProdutoDAO {
 			return list;
 		} catch (SQLException sqle) {
 			throw new Exception(sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
 }
