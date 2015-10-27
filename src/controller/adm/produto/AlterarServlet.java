@@ -9,17 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+
 import bean.Categoria;
+import bean.Produto;
 import dao.CategoriaDAO;
+import dao.ProdutoDAO;
 
 @WebServlet("/ProdutoAlterar")
 public class AlterarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CategoriaDAO daoCategoria;
+	private ProdutoDAO daoProduto;
 	private RequestDispatcher rd = null;
 
 	public AlterarServlet() throws Exception {
 		daoCategoria = new CategoriaDAO();
+		daoProduto = new ProdutoDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,17 +33,17 @@ public class AlterarServlet extends HttpServlet {
 
 		response.setContentType("text/html;charset=UTF-8");
 
-		String categoriaId = request.getParameter("categoriaId");
+		String produtoId = request.getParameter("produtoId");
 
-		if (categoriaId == null) {
-			rd = request.getRequestDispatcher("/CategoriaListar");
+		if (produtoId == null) {
+			rd = request.getRequestDispatcher("/ProdutoListar");
 		} else {
 			try {
-				request.setAttribute("categoria", daoCategoria.procurar(Integer.parseInt(categoriaId)));
+				request.setAttribute("categoria", daoProduto.procurar(Integer.parseInt(produtoId)));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			rd = request.getRequestDispatcher("adm/categoria/alterar.jsp");
+			rd = request.getRequestDispatcher("adm/produto/alterar.jsp");
 		}
 		rd.forward(request, response);
 	}
@@ -48,17 +54,18 @@ public class AlterarServlet extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 
 		try {
-			Categoria categoria = new Categoria();
-			categoria.setCategoriaId(Integer.parseInt(request.getParameter("categoriaId")));
-			categoria.setNome(request.getParameter("nome"));
-			categoria.setFaixaEtaria(request.getParameter("faixaEtaria"));
-			categoria.setLinha(request.getParameter("linha"));
-			daoCategoria.atualizar(categoria);
+			Produto produto = new Produto();
+			produto.setNome(request.getParameter("nome"));
+			produto.setDescricao(request.getParameter("descricao"));
+			produto.setPreco(request.getParameter("preco"));		
+			produto.setImg(request.getParameter("img"));
+			produto.setCategoria(daoCategoria.procurar(Integer.parseInt(request.getParameter("categoriaId"))));
+			daoProduto.atualizar(produto);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		rd = request.getRequestDispatcher("/CategoriaListar");
+		rd = request.getRequestDispatcher("/ProdutoListar");
 		rd.forward(request, response);
 	}
 
