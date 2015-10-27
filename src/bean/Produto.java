@@ -7,18 +7,18 @@ public class Produto {
 	private String descricao;
 	private String preco;
 	private String img;
-	private Categoria categoria;
+	private int categoriaId;
 	
 	public Produto() {	}
 	
-	public Produto(int produtoId, String nome, String descricao, String preco, String img, Categoria categoria) {
+	public Produto(int produtoId, String nome, String descricao, String preco, String img, int categoriaId) {
 		super();
 		this.produtoId = produtoId;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.preco = preco;
 		this.img = img;
-		this.categoria = categoria;
+		this.categoriaId = categoriaId;
 	}
 	
 	public int getProdutoId() {
@@ -57,11 +57,11 @@ public class Produto {
 		this.img = img;
 	}
 	
-	public Categoria getCategoria() {
-		return categoria;
+	public int getCategoria() {
+		return categoriaId;
 	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
+	public void setCategoria(int categoriaId) {
+		this.categoriaId = categoriaId;
 	}
 
 }

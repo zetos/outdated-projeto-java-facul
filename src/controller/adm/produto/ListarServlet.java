@@ -1,4 +1,4 @@
-package controller.adm.categoria;
+package controller.adm.produto;
 
 import java.io.IOException;
 
@@ -11,30 +11,33 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
 
-@WebServlet("/CategoriaExcluir")
-public class ExcluirServlet extends HttpServlet {
+@WebServlet("/ProdutoListar")
+public class ListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CategoriaDAO daoCategoria;
-	private RequestDispatcher rd = null;
 
-	public ExcluirServlet() throws Exception {
-		daoCategoria = new CategoriaDAO();
+	public ListarServlet() {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		rd = request.getRequestDispatcher("/CategoriaListar");
+		RequestDispatcher rd = null;
+
+		try {
+			daoCategoria = new CategoriaDAO();
+			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		rd = request.getRequestDispatcher("adm/categoria/categorias.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			daoCategoria.excluir(Integer.parseInt(request.getParameter("id")));
-			response.setStatus(HttpServletResponse.SC_OK);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		doGet(request, response);
 	}
+
 }

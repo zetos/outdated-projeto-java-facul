@@ -27,16 +27,6 @@
 <link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="../../resources/css/style.css" rel="stylesheet">
 
-<!-- jQuery -->
-<!-- Gambiarra -->
-<!-- Bootstrap Core JavaScript -->
-<script src="../../resources/js/jquery.js"></script>
-<script src="../../resources/js/bootstrap.min.js"></script>
-<script src="../../resources/js/script.js"></script>
-<script src="resources/js/jquery.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-<script src="resources/js/script.js"></script>
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -231,6 +221,14 @@
 	</div>
 	<!-- MODAL2 END -->
 
+	<!-- jQuery -->
+	<!-- Gambiarra -->
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../../resources/js/jquery.js"></script>
+	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="../../resources/js/script.js"></script>
+	<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/bootstrap.min.js"></script>
+	<script src="resources/js/script.js"></script>
 </body>
-
 </html>

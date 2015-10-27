@@ -1,4 +1,4 @@
-package controller.adm.categoria;
+package controller.adm.produto;
 
 import java.io.IOException;
 
@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
 
-@WebServlet("/CategoriaExcluir")
+@WebServlet("/ProdutoExcluir")
 public class ExcluirServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CategoriaDAO daoCategoria;
