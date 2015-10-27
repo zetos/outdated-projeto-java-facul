@@ -23,6 +23,7 @@ public class AdicionarServlet extends HttpServlet {
 	
     public AdicionarServlet() throws Exception {
     	daoProduto = new ProdutoDAO();
+    	daoCategoria = new CategoriaDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -39,7 +40,7 @@ public class AdicionarServlet extends HttpServlet {
 			produto.setDescricao(request.getParameter("descricao"));
 			produto.setPreco(request.getParameter("preco"));		
 			produto.setImg(request.getParameter("img"));
-			produto.setCategoria(Integer.parseInt(request.getParameter("categoriaId")));
+			produto.setCategoria(daoCategoria.procurar(Integer.parseInt(request.getParameter("categoriaId"))));
 			daoProduto.salvar(produto);
 		} catch (Exception e) {
 			e.printStackTrace();

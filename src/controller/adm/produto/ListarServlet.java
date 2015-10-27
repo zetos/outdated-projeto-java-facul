@@ -10,13 +10,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
+import dao.ProdutoDAO;
 
 @WebServlet("/ProdutoListar")
 public class ListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private CategoriaDAO daoCategoria;
+	private ProdutoDAO daoProduto;
 
-	public ListarServlet() {
+	public ListarServlet() throws Exception {
+		daoCategoria = new CategoriaDAO();
+		daoProduto = new ProdutoDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,13 +29,12 @@ public class ListarServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 
 		try {
-			daoCategoria = new CategoriaDAO();
 			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		rd = request.getRequestDispatcher("adm/categoria/categorias.jsp");
+		rd = request.getRequestDispatcher("adm/produto/produtos.jsp");
 		rd.forward(request, response);
 	}
 
