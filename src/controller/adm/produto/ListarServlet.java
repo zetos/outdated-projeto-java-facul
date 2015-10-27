@@ -31,9 +31,9 @@ public class ListarServlet extends HttpServlet {
 
 		try {
 			Imagem img = new Imagem();
-			request.setAttribute("listarImagens", img.getImagens());
 			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
 			request.setAttribute("listarProdutos", daoProduto.listarProdutos());
+			request.setAttribute("listarImagens", img.getImagens());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

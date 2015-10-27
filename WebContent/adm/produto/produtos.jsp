@@ -74,11 +74,10 @@
 									<td>R$ ${listaBrinquedo.preco}</td>
 									<td>${listaBrinquedo.descricao}</td>
 									<td>${listaBrinquedo.categoria.nome}</td>
-									<td><a href="#"><img class="img-responsive"
+									<td><a href="/ProjetoFinal/ProdutoAlterar?produtoId=${listaBrinquedo.produtoId}"><img class="img-responsive"
 											src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
-									<td><input data-toggle="modal" data-target="#excluirModal"
-										type="image" class="img-responsive"
-										src="resources/imgs/outros/delete.png" alt="excluir categoria" />
+									<td><button value="${listaBrinquedo.produtoId}"
+											class="btn btn-danger btn-sm excluir">Remover</button>
 									</td>
 								</tr>
 							</c:forEach>
@@ -133,8 +132,8 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
-								<form action="/ProjetoFinal/CategoriaAlterar" method="post"
-									name="categoriaForm" id="Form_categoria" novalidate>
+								<form action="/ProjetoFinal/ProdutoAdicionar" method="post"
+									name="produtoForm" id="form_produto" novalidate>
 									<div class="row control-group">
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
@@ -176,9 +175,9 @@
 									</div>
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label for="instituicao">Categoria:</label> <select
-												class="form-control" id="categoria" name="linha" required
-												data-validation-required-message="Por favor insira a linha.">
+											<label>Categoria:</label> <select
+												class="form-control" id="categoriaId" name="categoriaId" required
+												data-validation-required-message="Por favor insira a categoria!">
 												<c:forEach var="lista"
 													items="${ requestScope.listarCategorias }">
 													<option value="${lista.categoriaId}">${lista.nome}</option>
@@ -206,40 +205,38 @@
 	<!-- MODAL1 END -->
 
 	<!-- MODAL 2 INICIO -->
-	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade" id="confirmation">
+		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
-					<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
+					<h4 class="modal-title" id="myModalLabel">Excluir Produto</h4>
 				</div>
 				<div class="modal-body">
 					<!-- MODAL corpo -->
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-								<h1>Tem certeza que deseja excluir essa categoria?</h1>
-								<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
+								<h1>Tem certeza que deseja excluir esse produto?</h1>
 							</div>
 						</div>
 						<!-- div row -->
 					</div>
 					<!-- div container -->
 				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" id="id" />
+					<button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+					<input type="submit" id="excluirProdutoModal" value="Remover"
+						class="btn btn-danger" />
+				</div>
 			</div>
 		</div>
 	</div>
 	<!-- MODAL2 END -->
-
-	<!-- Gambiarra -->
-	<script src="../../resources/js/jquery.js"></script>
-	<script src="../../resources/js/bootstrap.min.js"></script>
-	<script src="../../resources/js/script.js"></script>
-	<script src="resources/js/script.js"></script>
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
@@ -247,6 +244,12 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="resources/js/bootstrap.min.js"></script>
 
+	<!-- Gambiarra -->
+	<script src="../../resources/js/jquery.js"></script>
+	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="../../resources/js/script.js"></script>
+	<script src="resources/js/script.js"></script>
+	
 	<!-- Menu Toggle Script -->
 	<script>
 		$("#menu-toggle").click(function(e) {

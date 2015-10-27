@@ -7,6 +7,7 @@ public class Imagem {
 	private ArrayList<String> imagens;
 	
 	public Imagem() {
+		imagens = new ArrayList<>();
 		imagens.add("resources/imgs/actionFigures/actionfigure1.jpg");
 		imagens.add("resources/imgs/actionFigures/actionfigure2.jpg");
 		imagens.add("resources/imgs/actionFigures/actionfigure3.jpg");

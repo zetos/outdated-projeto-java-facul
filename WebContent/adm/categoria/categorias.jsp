@@ -145,7 +145,7 @@
 
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label for="instituicao">Linha:</label> <select
+											<label>Linha:</label> <select
 												class="form-control" id="categoria" name="linha" required
 												data-validation-required-message="Por favor insira a linha.">
 												<option value="Todos">Todos</option>
@@ -157,7 +157,7 @@
 
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label for="instituicao">Faixa Etária:</label> <select
+											<label>Faixa Etária:</label> <select
 												class="form-control" id="faixa_etaria" name="faixaEtaria"
 												required
 												data-validation-required-message="Por favor insira a faixa etária.">
@@ -211,9 +211,9 @@
 					<!-- div container -->
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="categoriaId" id="categoriaId" />
+					<input type="hidden" name="id" id="id" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
-					<input type="submit" id="excluirModal" value="Remover"
+					<input type="submit" id="excluirCategoriaModal" value="Remover"
 						class="btn btn-danger" />
 				</div>
 			</div>

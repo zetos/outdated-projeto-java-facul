@@ -25,7 +25,7 @@ public class ExcluirServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		rd = request.getRequestDispatcher("/CategoriaListar");
+		rd = request.getRequestDispatcher("/ProdutoListar");
 		rd.forward(request, response);
 	}
 
