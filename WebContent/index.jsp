@@ -59,7 +59,7 @@
 						<span class="product product-name">${brinquedo.nome}</span>
 						<span class="product product-description">${brinquedo.descricao}</span>
 						<span class="product product-price">R$ ${brinquedo.preco}</span> 
-						<span class="product product-details"><a href="#">+Detalhes</a></span>
+						<span class="product product-details"><a href="/ProjetoFinal/Produto">+Detalhes</a></span>
 					</div>
 					<c:if test="${ number.count % 3 == 0 }"><div class="row col-md-12"><hr></div></c:if>
 				</c:forEach>
