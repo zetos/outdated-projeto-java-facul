@@ -10,15 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
+import dao.ProdutoDAO;
 
 @WebServlet("/ProdutoExcluir")
 public class ExcluirServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CategoriaDAO daoCategoria;
+	private ProdutoDAO daoProduto;
 	private RequestDispatcher rd = null;
 
 	public ExcluirServlet() throws Exception {
-		daoCategoria = new CategoriaDAO();
+		daoProduto = new ProdutoDAO();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -31,7 +32,7 @@ public class ExcluirServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			daoCategoria.excluir(Integer.parseInt(request.getParameter("id")));
+			daoProduto.excluir(Integer.parseInt(request.getParameter("id")));
 			response.setStatus(HttpServletResponse.SC_OK);
 		} catch (Exception e) {
 			e.printStackTrace();

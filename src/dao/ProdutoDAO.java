@@ -66,14 +66,11 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void excluir(Produto produto) throws Exception {
-		if (produto == null)
-			throw new Exception("O valor passado nao pode ser nulo");
-		
+	public void excluir(int produtoId) throws Exception {	
 		try {
 			String SQL = "DELETE FROM produto WHERE produtoId=?";
 			ps = conn.prepareStatement(SQL);
-			ps.setInt(1, produto.getProdutoId());
+			ps.setInt(1, produtoId);
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao excluir dados " + sqle, sqle);
