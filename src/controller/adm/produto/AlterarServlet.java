@@ -56,6 +56,7 @@ public class AlterarServlet extends HttpServlet {
 
 		try {
 			Produto produto = new Produto();
+			produto.setProdutoId(Integer.parseInt(request.getParameter("categoriaId")));
 			produto.setNome(request.getParameter("nome"));
 			produto.setDescricao(request.getParameter("descricao"));
 			produto.setPreco(request.getParameter("preco"));		

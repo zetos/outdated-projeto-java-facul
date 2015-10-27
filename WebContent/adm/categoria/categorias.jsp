@@ -45,74 +45,61 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
-						<h1>Lista de Categorias</h1>
-					</div>
+					<h1>Lista de Categorias</h1>
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-lg-12">
-						<!-- Lista Categorias -->
-
-						<table class="table table-striped">
+					<!-- Lista Categorias -->
+					<table class="table table-condensed table-hover">
+						<tr>
+							<th>Nome</th>
+							<th>Código</th>
+							<th>Linha</th>
+							<th>Faixa Etária</th>
+							<th>Alterar</th>
+							<th>Excluir</th>
+						</tr>
+						<c:forEach var="lista" items="${ requestScope.listarCategorias }">
 							<tr>
-								<th colspan="6"><h3>Categorias</h3></th>
+								<td>${lista.nome}</td>
+								<td>${lista.categoriaId}</td>
+								<td>${lista.linha}</td>
+								<td>${lista.faixaEtaria}</td>
+								<td><a
+									href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
+										class="img-responsive" src="resources/imgs/outros/edit.png"
+										alt="editar categoria"></a></td>
+								<td><button value="${lista.categoriaId}"
+										class="btn btn-danger btn-sm excluir">Remover</button></td>
 							</tr>
-							<tr>
-								<th>Nome</th>
-								<th>Código</th>
-								<th>Linha</th>
-								<th>Faixa Etária</th>
-								<th>Alterar</th>
-								<th>Excluir</th>
-							</tr>
-							<c:forEach var="lista" items="${ requestScope.listarCategorias }">
-								<tr>
-									<td>${lista.nome}</td>
-									<td>${lista.categoriaId}</td>
-									<td>${lista.linha}</td>
-									<td>${lista.faixaEtaria}</td>
-									<td><a
-										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
-											class="img-responsive" src="resources/imgs/outros/edit.png"
-											alt="editar categoria"></a></td>
-									<td><button value="${lista.categoriaId}"
-											class="btn btn-danger btn-sm excluir">Remover</button></td>
-								</tr>
-							</c:forEach>
-						</table>
-						<!-- end Lista Categorias -->
+						</c:forEach>
+					</table>
+					<!-- end Lista Categorias -->
+				</div>
+				<!-- Adicionar categoria -->
+				<div id="registro">
+					<div class="row">
+						<div class="text-center">
+							<h2>Adicione uma categoria</h2>
+							<h3>Seja objetivo na criação das mesmas. Evite redundancias.</h3>
+							<br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8 col-lg-offset-2 text-center">
+							<!-- MODAL botao -->
+							<button type="button" class="btn btn-primary btn-lg"
+								data-toggle="modal" data-target="#myModal">Adicionar</button>
+						</div>
 					</div>
 				</div>
-
-				<!-- Adicionar categoria -->
-				<section id="registro">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 text-center">
-								<h2>Adicione uma categoria</h2>
-								<h3>Seja objetivo na criação das mesmas. Evite
-									redundancias.</h3>
-								<br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-8 col-lg-offset-2 text-center">
-								<!-- MODAL botao -->
-								<button type="button" class="btn btn-primary btn-lg"
-									data-toggle="modal" data-target="#myModal">Adicionar</button>
-							</div>
-						</div>
-					</div>
-				</section>
-
 			</div>
+			<br />
 		</div>
-
 		<!-- /#page-content-wrapper -->
 	</div>
 
-	<!-- MODAL inicio -->
+	<!-- MODAL 1 INICIO -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -137,16 +124,16 @@
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
 											<label>Nome da Categoria:</label> <input type="text"
-												class="form-control" placeholder="Nome da Categoria"
-												name="nome" id="name_categoria" required
+												class="form-control" required placeholder="Nome da Categoria"
+												name="nome" id="name_categoria" 
 												data-validation-required-message="Por favor insira o nome da categoria.">
 										</div>
 									</div>
 
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label>Linha:</label> <select
-												class="form-control" id="categoria" name="linha" required
+											<label>Linha:</label> <select class="form-control"
+												id="categoria" name="linha" required
 												data-validation-required-message="Por favor insira a linha.">
 												<option value="Todos">Todos</option>
 												<option value="Meninos">Meninos</option>
@@ -157,9 +144,8 @@
 
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label>Faixa Etária:</label> <select
-												class="form-control" id="faixa_etaria" name="faixaEtaria"
-												required
+											<label>Faixa Etária:</label> <select class="form-control"
+												id="faixa_etaria" name="faixaEtaria" required
 												data-validation-required-message="Por favor insira a faixa etária.">
 												<option value="Todos">Todos</option>
 												<option value="Ate 12 anos">Até 12 anos</option>
@@ -169,10 +155,11 @@
 										</div>
 									</div>
 									<br>
-									<div class="row control-group">
+									<div class="row control-group text-right">
 										<div class="form-group col-xs-12 controls">
+											<button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cancelar</button>
 											<input type="submit" class="btn btn-primary btn-lg"
-												value="enviar"></input>
+												value="Enviar"></input>
 										</div>
 									</div>
 								</form>
@@ -185,7 +172,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- MODAL1 END -->
+	<!-- MODAL 1 END -->
 
 	<!-- MODAL 2 INICIO -->
 	<div class="modal fade" id="confirmation">
@@ -219,7 +206,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- MODAL2 END -->
+	<!-- MODAL 2 END -->
 
 	<!-- jQuery -->
 	<!-- Gambiarra -->

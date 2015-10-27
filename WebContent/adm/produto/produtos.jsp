@@ -46,74 +46,67 @@
 		<div id="page-content-wrapper">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-lg-12">
-						<h1>Lista de Brinquedos</h1>
-					</div>
+					<h1>Lista de Brinquedos</h1>
 				</div>
 				<br>
 				<div class="row">
-					<div class="col-lg-12">
-						<!-- Lista Categorias -->
-						<table class="table table-striped">
+					<!-- Lista Produtos -->
+					<table class="table table-condensed table-hover">
+						<tr>
+							<th>Código</th>
+							<th>Nome</th>
+							<th>Imagem</th>
+							<th>Preço</th>
+							<th>Descrição</th>
+							<th>Categoria</th>
+							<th>Alterar</th>
+							<th>Excluir</th>
+						</tr>
+						<c:forEach var="listaBrinquedo"
+							items="${ requestScope.listarProdutos }">
 							<tr>
-								<th>Código</th>
-								<th>Nome</th>
-								<th>Imagem</th>
-								<th>Preço</th>
-								<th>Descrição</th>
-								<th>Categoria</th>
-								<th>Alterar</th>
-								<th>Excluir</th>
+								<td>${listaBrinquedo.produtoId}</td>
+								<td>${listaBrinquedo.nome}</td>
+								<td>${listaBrinquedo.img}</td>
+								<td>R$ ${listaBrinquedo.preco}</td>
+								<td>${listaBrinquedo.descricao}</td>
+								<td>${listaBrinquedo.categoria.nome}</td>
+								<td><a
+									href="/ProjetoFinal/ProdutoAlterar?produtoId=${listaBrinquedo.produtoId}"><img
+										class="img-responsive" src="resources/imgs/outros/edit.png"
+										alt="editar categoria"></a></td>
+								<td><button value="${listaBrinquedo.produtoId}"
+										class="btn btn-danger btn-sm excluir">Remover</button></td>
 							</tr>
-							<c:forEach var="listaBrinquedo"
-								items="${ requestScope.listarProdutos }">
-								<tr>
-									<td>${listaBrinquedo.produtoId}</td>
-									<td>${listaBrinquedo.nome}</td>
-									<td>${listaBrinquedo.img}</td>
-									<td>R$ ${listaBrinquedo.preco}</td>
-									<td>${listaBrinquedo.descricao}</td>
-									<td>${listaBrinquedo.categoria.nome}</td>
-									<td><a href="/ProjetoFinal/ProdutoAlterar?produtoId=${listaBrinquedo.produtoId}"><img class="img-responsive"
-											src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
-									<td><button value="${listaBrinquedo.produtoId}"
-											class="btn btn-danger btn-sm excluir">Remover</button>
-									</td>
-								</tr>
-							</c:forEach>
-						</table>
-						<!-- end Lista Categorias -->
-					</div>
+						</c:forEach>
+					</table>
+					<!-- end Lista Categorias -->
 				</div>
 
 				<!-- Adicionar categoria -->
-				<section id="registro">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 text-center">
-								<h2>Adicione um Brinquedo</h2>
-								<h3>Seja objetivo na criação das mesmas. Evite
-									redundancias.</h3>
-								<br>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-8 col-lg-offset-2 text-center">
-								<!-- MODAL botao -->
-								<button type="button" class="btn btn-primary btn-lg"
-									data-toggle="modal" data-target="#myModal">Adicionar</button>
-							</div>
+				<div id="registro">
+					<div class="row">
+						<div class="text-center">
+							<h2>Adicione um Brinquedo</h2>
+							<h3>Seja objetivo na criação das mesmas. Evite redundancias.</h3>
+							<br>
 						</div>
 					</div>
-				</section>
-
+					<div class="row">
+						<div class="text-center">
+							<!-- MODAL botao -->
+							<button type="button" class="btn btn-primary btn-lg"
+								data-toggle="modal" data-target="#myModal">Adicionar</button>
+						</div>
+					</div>
+				</div>
 			</div>
+			<br />
 		</div>
-
 		<!-- /#page-content-wrapper -->
 	</div>
 
-	<!-- MODAL inicio -->
+	<!-- MODAL 1 INICIO -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -131,15 +124,15 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-
 								<form action="/ProjetoFinal/ProdutoAdicionar" method="post"
-									name="produtoForm" id="form_produto" novalidate>
+									name="produtoForm" id="form_produto">
 									<div class="row control-group">
 										<div
 											class="form-group col-xs-12 floating-label-form-group controls">
 											<label>Nome do Brinquedo:</label> <input type="text"
-												class="form-control" placeholder="Nome do Brinquedo"
-												name="nome" id="name_brinquedo" required
+												class="form-control" required
+												placeholder="Nome do Brinquedo" name="nome"
+												id="name_brinquedo"
 												data-validation-required-message="Por favor insira o nome do brinquedo.">
 										</div>
 									</div>
@@ -175,8 +168,8 @@
 									</div>
 									<div class="row control-group">
 										<div class="form-group col-xs-12 controls">
-											<label>Categoria:</label> <select
-												class="form-control" id="categoriaId" name="categoriaId" required
+											<label>Categoria:</label> <select class="form-control"
+												id="categoriaId" name="categoriaId" required
 												data-validation-required-message="Por favor insira a categoria!">
 												<c:forEach var="lista"
 													items="${ requestScope.listarCategorias }">
@@ -186,10 +179,12 @@
 										</div>
 									</div>
 
-									<div class="row control-group">
+									<div class="row control-group text-right">
 										<div class="form-group col-xs-12 controls">
+											<button type="button" class="btn btn-default btn-lg"
+												data-dismiss="modal">Cancelar</button>
 											<input type="submit" class="btn btn-primary btn-lg"
-												value="enviar"></input>
+												value="Enviar"></input>
 										</div>
 									</div>
 								</form>
@@ -202,7 +197,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- MODAL1 END -->
+	<!-- MODAL 1 END -->
 
 	<!-- MODAL 2 INICIO -->
 	<div class="modal fade" id="confirmation">
@@ -236,7 +231,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- MODAL2 END -->
+	<!-- MODAL 2 END -->
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
@@ -249,7 +244,7 @@
 	<script src="../../resources/js/bootstrap.min.js"></script>
 	<script src="../../resources/js/script.js"></script>
 	<script src="resources/js/script.js"></script>
-	
+
 	<!-- Menu Toggle Script -->
 	<script>
 		$("#menu-toggle").click(function(e) {
