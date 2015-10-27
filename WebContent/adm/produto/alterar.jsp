@@ -104,11 +104,12 @@
 									</select></td>
 								</tr>
 								<tr>
-									<th colspan="2"><input type="submit"
-										class="btn btn-primary btn-lg editar-img" name="bSalvar"
+									<td> </td>
+									<td colspan="5"><input type="submit"
+										class="btn btn-primary btn-lg" name="bSalvar"
 										value="Salvar" /> <a
-										class="btn btn-default btn-lg editar-img"
-										href="/ProjetoFinal/ProdutoListar" role="button">Voltar</a></th>
+										class="btn btn-default btn-lg"
+										href="/ProjetoFinal/ProdutoListar" role="button">Voltar</a></td>
 								</tr>
 							</table>
 						</form>
