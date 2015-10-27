@@ -22,6 +22,11 @@
 <link href="resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="resources/css/style.css" rel="stylesheet">
 
+<!-- Gambiarra -->
+<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
+<link href="../../resources/css/style.css" rel="stylesheet">
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,7 +47,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Lista de Categorias</h1>
+						<h1>Lista de Brinquedos</h1>
 					</div>
 				</div>
 				<br>
@@ -53,9 +58,11 @@
 							<tr>
 								<th>Código</th>
 								<th>Nome</th>
-								<th>Linha</th>
-								<th>Faixa Etária</th>
+								<th>Imagem</th>
+								<th>Descrição</th>
+								<th>ID Categoria</th>
 								<th>Alterar</th>
+								<th>Excluir</th>
 							</tr>
 							<c:forEach var="listaBrinquedo" items="${ requestScope.listarProdutos }">
 								<tr>
@@ -68,9 +75,10 @@
 									<td><a
 										href="#"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
-											alt="editar categoria"></a><a href="" data-toggle="modal"><img
-											class="img-responsive" src="resources/imgs/outros/delete.png"
-											alt="excluir categoria"></a></td>
+											alt="editar categoria"></a></td>
+											<td><input data-toggle="modal" data-target="#excluirModal" type="image" class="img-responsive"
+										src="resources/imgs/outros/delete.png" alt="excluir categoria" />
+									</td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -83,7 +91,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-12 text-center">
-								<h2>Adicione uma categoria</h2>
+								<h2>Adicione um Brinquedo</h2>
 								<h3>Seja objetivo na criação das mesmas. Evite
 									redundancias.</h3>
 								<br>
@@ -104,21 +112,119 @@
 
 		<!-- /#page-content-wrapper -->
 	</div>
-				<!-- Brinquedos 				
-				<c:forEach var="brinquedo" items="${ requestScope.listarProdutos }" varStatus="number">
-					<div class="col-md-4 product">
-						<img src="${brinquedo.img}" class="img-responsive product-image"
-							alt="${brinquedo.descricao}"> <br>
 
-						<span class="product product-name">${brinquedo.nome}</span>
-						<span class="product product-description">${brinquedo.descricao}</span>
-						<span class="product product-price">R$ ${brinquedo.preco}</span> 
-						<span class="product product-details"><a href="#">+Detalhes</a></span>
+	<!-- MODAL inicio -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Adicione um Brinquedo</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 
+								<form action="/ProjetoFinal/CategoriaAdicionar" method="post"
+									name="categoriaForm" id="Form_categoria" novalidate>
+									<div class="row control-group">
+										<div
+											class="form-group col-xs-12 floating-label-form-group controls">
+											<label>Nome do Brinquedo:</label> <input type="text"
+												class="form-control" placeholder="Nome do Brinquedo"
+												name="nome" id="name_brinquedo" required
+												data-validation-required-message="Por favor insira o nome do brinquedo.">
+										</div>
+									</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<label for="instituicao">Descrição:</label> 
+											<textarea class="form-control" rows="2" id="brinquedo_descricao" name="descricao" placeholder="Insira a descrição do brinquedo.." required data-validation-required-message="Por favor insira a descrição do brinquedo"></textarea>
+										</div>
+									</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<label for="instituicao">Preço:</label> 
+											<div class="input-group">
+												<div class="input-group-addon">R$</div>
+												<input type="text" class="form-control" id="brinquedo_preco" name="preco" placeholder="Preço do brinquedo.." required required data-validation-required-message="Por favor insira o valor do brinquedo..">
+												<div class="input-group-addon">.00</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<label for="instituicao">Categoria:</label> <select
+											class="form-control" id="categoria" name="linha" required
+											data-validation-required-message="Por favor insira a linha.">
+											<c:forEach var="lista" items="${ requestScope.listarCategorias }">
+											<option value="${lista.categoriaId}">${lista.nome}</option>
+										</c:forEach>
+									</select>
+								</div>
+							</div>
+
+									<div class="row control-group">
+										<div class="form-group col-xs-12 controls">
+											<input type="submit" class="btn btn-primary btn-lg"
+												value="enviar"></input>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- div row -->
 					</div>
-					<c:if test="${ number.count % 3 == 0 }"><div class="row col-md-12"><hr></div></c:if>
-				</c:forEach>
-			Fim_Brinquedos -->
+					<!-- div container -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL1 END -->
+	
+	<!-- MODAL 2 INICIO -->
+	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+								<h1>Tem certeza que deseja excluir essa categoria?</h1>
+								<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
+							</div>
+						</div>
+						<!-- div row -->
+					</div>
+					<!-- div container -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- MODAL2 END -->
+
+	<!-- Gambiarra -->
+<script src="../../resources/js/jquery.js"></script>
+<script src="../../resources/js/bootstrap.min.js"></script>
+<script src="../../resources/js/script.js"></script>
 
 	<!-- jQuery -->
 	<script src="resources/js/jquery.js"></script>
