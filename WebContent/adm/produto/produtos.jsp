@@ -131,7 +131,6 @@
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-
 								<form action="/ProjetoFinal/ProdutoAdicionar" method="post"
 									name="produtoForm" id="form_produto" novalidate>
 									<div class="row control-group">
