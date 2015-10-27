@@ -53,66 +53,60 @@
 				</div>
 				<hr>
 				<br>
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<jsp:useBean id="produto" scope="session" class="bean.Produto" />
-						<form action="/ProjetoFinal/ProdutoAlterar" method="post">
-							<table class="table table-striped">
-								<tr>
-									<td>ID do brinquedo:</td>
-									<td><input class="form-control" type="text"
-										name="produtoId" value="${produto.produtoId}" id="produtoId"
-										readonly="readonly"></td>
-								</tr>
-								<tr>
-									<td>Nome do brinquedo:</td>
-									<td><input class="form-control" type="text" name="nome"
-										value="${produto.nome}" id="name_categoria" required></td>
-								</tr>
-								<tr>
-									<td>Descrição:</td>
-									<td><textarea class="form-control" rows="2"
-											id="brinquedo_descricao" name="descricao"
-											placeholder="Insira a descrição do brinquedo.." required
-											data-validation-required-message="Por favor insira a descrição do brinquedo"
-											value="${produto.descricao}"></textarea></td>
-								</tr>
-								<tr>
-									<td>Preço:</td>
-									<td><div class="input-group">
-											<div class="input-group-addon">R$</div>
-											<input type="text" class="form-control" id="brinquedo_preco"
-												name="preco" placeholder="Preço do brinquedo.." required
-												data-validation-required-message="Por favor insira o valor do brinquedo.."
-												value="${produto.preco}">
-										</div></td>
-								</tr>
-								<tr>
-									<td>Imagem do brinquedo:</td>
-									<td><input class="form-control" type="text" name="img"
-										value="${produto.img}" id="name_categoria" required></td>
-								</tr>
-								<tr>
-									<td>Categoria:</td>
-									<td><select class="form-control" id="categoriaId"
-										name="categoriaId" required
-										data-validation-required-message="Por favor insira a categoria!">
-											<c:forEach var="lista"
-												items="${ requestScope.listarCategorias }">
-												<option value="${lista.categoriaId}">${lista.nome}</option>
-											</c:forEach>
-									</select></td>
-								</tr>
-								<tr>
-									<th colspan="2"><input type="submit"
-										class="btn btn-primary btn-lg editar-img" name="bSalvar"
-										value="Salvar" /> <a
-										class="btn btn-default btn-lg editar-img"
-										href="/ProjetoFinal/ProdutoListar" role="button">Voltar</a></th>
-								</tr>
-							</table>
-						</form>
-					</div>
+				<div class="col-lg-8 col-lg-offset-2">
+					<jsp:useBean id="produto" scope="session" class="bean.Produto" />
+					<form action="/ProjetoFinal/ProdutoAlterar" method="post">
+						<div class="row form-group">
+							<label for="produtoId">Produto ID</label> <input
+								class="form-control" type="text" name="produtoId"
+								value="${produto.produtoId}" id="produtoId" readonly />
+						</div>
+						<div class="row form-group">
+							<label for="nome">Nome do brinquedo</label> <input
+								class="form-control" type="text" name="nome"
+								value="${produto.nome}" id="name_categoria" required>
+						</div>
+						<div class="row form-group">
+							<label for="descricao">Descrição</label>
+							<textarea class="form-control" rows="2" id="brinquedo_descricao"
+								name="descricao" placeholder="Insira a descrição do brinquedo.."
+								required
+								data-validation-required-message="Por favor insira a descrição do brinquedo"
+								value="${produto.descricao}"></textarea>
+						</div>
+						<div class="row form-group">
+							<label for="preco">Preço</label>
+							<div class="input-group">
+								<div class="input-group-addon">R$</div>
+								<input type="text" class="form-control" id="brinquedo_preco"
+									name="preco" placeholder="Preço do brinquedo.." required
+									data-validation-required-message="Por favor insira o valor do brinquedo.."
+									value="${produto.preco}">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label for="img">Imagem do brinquedo</label> <input
+								class="form-control" type="text" name="img"
+								value="${produto.img}" id="name_categoria" required>
+						</div>
+						<div class="row form-group">
+							<label for="categoriaId">Categoria</label> <select
+								class="form-control" id="categoriaId" name="categoriaId"
+								required
+								data-validation-required-message="Por favor insira a categoria!">
+								<c:forEach var="lista"
+									items="${ requestScope.listarCategorias }">
+									<option value="${lista.categoriaId}">${lista.nome}</option>
+								</c:forEach>
+							</select>
+						</div>
+						<div class="row form-group text-right">
+							<input type="submit" class="btn btn-primary btn-lg"
+								name="bSalvar" value="Salvar" /> 
+							<a class="btn btn-default btn-lg"
+								href="/ProjetoFinal/ProdutoListar" role="button">Voltar</a>
+						</div>
+					</form>
 				</div>
 			</div>
 			<!-- /#page-content-wrapper -->
