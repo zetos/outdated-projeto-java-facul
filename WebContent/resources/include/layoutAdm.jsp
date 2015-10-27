@@ -36,7 +36,7 @@
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand"><a href="#"> ÁREA ADMINISTRATIVA </a></li>
 			<li><a href="/ProjetoFinal/CategoriaListar">Categorias</a></li>
-			<li><a href="/ProjetoFinal/ProdutosListar">Produtos</a></li>
+			<li><a href="/ProjetoFinal/ProdutoListar">Produtos</a></li>
 			<li><a href="#">Usuários</a></li>
 		</ul>
 	</div>

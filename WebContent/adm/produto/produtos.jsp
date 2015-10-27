@@ -59,8 +59,9 @@
 								<th>Código</th>
 								<th>Nome</th>
 								<th>Imagem</th>
+								<th>Preço</th>
 								<th>Descrição</th>
-								<th>ID Categoria</th>
+								<th>Categoria</th>
 								<th>Alterar</th>
 								<th>Excluir</th>
 							</tr>
@@ -70,9 +71,9 @@
 									<td>${listaBrinquedo.produtoId}</td>
 									<td>${listaBrinquedo.nome}</td>
 									<td>${listaBrinquedo.img}</td>
-									<td>${listaBrinquedo.preco}</td>
+									<td>R$ ${listaBrinquedo.preco}</td>
 									<td>${listaBrinquedo.descricao}</td>
-									<td>${listaBrinquedo.categoriaId}</td>
+									<td>${listaBrinquedo.categoria.nome}</td>
 									<td><a href="#"><img class="img-responsive"
 											src="resources/imgs/outros/edit.png" alt="editar categoria"></a></td>
 									<td><input data-toggle="modal" data-target="#excluirModal"
@@ -201,57 +202,58 @@
 				</div>
 			</div>
 		</div>
-		<!-- MODAL1 END -->
+	</div>
+	<!-- MODAL1 END -->
 
-		<!-- MODAL 2 INICIO -->
-		<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
-					</div>
-					<div class="modal-body">
-						<!-- MODAL corpo -->
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-									<h1>Tem certeza que deseja excluir essa categoria?</h1>
-									<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
-								</div>
+	<!-- MODAL 2 INICIO -->
+	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Excluir Categoria</h4>
+				</div>
+				<div class="modal-body">
+					<!-- MODAL corpo -->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+								<h1>Tem certeza que deseja excluir essa categoria?</h1>
+								<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
 							</div>
-							<!-- div row -->
 						</div>
-						<!-- div container -->
+						<!-- div row -->
 					</div>
+					<!-- div container -->
 				</div>
 			</div>
 		</div>
-		<!-- MODAL2 END -->
+	</div>
+	<!-- MODAL2 END -->
 
-		<!-- Gambiarra -->
-		<script src="../../resources/js/jquery.js"></script>
-		<script src="../../resources/js/bootstrap.min.js"></script>
-		<script src="../../resources/js/script.js"></script>
-		<script src="resources/js/script.js"></script>
+	<!-- Gambiarra -->
+	<script src="../../resources/js/jquery.js"></script>
+	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="../../resources/js/script.js"></script>
+	<script src="resources/js/script.js"></script>
 
-		<!-- jQuery -->
-		<script src="resources/js/jquery.js"></script>
+	<!-- jQuery -->
+	<script src="resources/js/jquery.js"></script>
 
-		<!-- Bootstrap Core JavaScript -->
-		<script src="resources/js/bootstrap.min.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="resources/js/bootstrap.min.js"></script>
 
-		<!-- Menu Toggle Script -->
-		<script>
-			$("#menu-toggle").click(function(e) {
-				e.preventDefault();
-				$("#wrapper").toggleClass("toggled");
-			});
-		</script>
+	<!-- Menu Toggle Script -->
+	<script>
+		$("#menu-toggle").click(function(e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("toggled");
+		});
+	</script>
 </body>
 
 </html>
