@@ -39,7 +39,8 @@ public class AlterarServlet extends HttpServlet {
 			rd = request.getRequestDispatcher("/ProdutoListar");
 		} else {
 			try {
-				request.setAttribute("categoria", daoProduto.procurar(Integer.parseInt(produtoId)));
+				request.setAttribute("produto", daoProduto.procurar(Integer.parseInt(produtoId)));
+				request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
