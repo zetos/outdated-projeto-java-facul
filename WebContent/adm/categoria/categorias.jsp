@@ -231,4 +231,8 @@
 	<script src="resources/js/bootstrap.min.js"></script>
 	<script src="resources/js/script.js"></script>
 </body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 255d174281dd1b4f6d197fe4c32d40e7be6ba082
 </html>
