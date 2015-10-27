@@ -59,8 +59,6 @@ public class ProdutoDAO {
 			ps.executeUpdate();
 		} catch (SQLException sqle) {
 			throw new Exception("Erro ao alterar dados " + sqle, sqle);
-		} finally {
-			ConnectionFactory.closeConnection(conn, ps);
 		}
 	}
 
