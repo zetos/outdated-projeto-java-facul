@@ -15,11 +15,9 @@ import dao.ProdutoDAO;
 @WebServlet("/ProdutoListar")
 public class ListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CategoriaDAO daoCategoria;
 	private ProdutoDAO daoProduto;
 
 	public ListarServlet() throws Exception {
-		daoCategoria = new CategoriaDAO();
 		daoProduto = new ProdutoDAO();
 	}
 
@@ -29,7 +27,7 @@ public class ListarServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 
 		try {
-			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
+			request.setAttribute("listarProdutos", daoProduto.listarProdutos());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

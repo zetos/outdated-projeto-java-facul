@@ -10,9 +10,7 @@
 
 	<!-- 
 	
-		CATEGORIA INDEX
-		USUARIO INDEX
-		PRODUTO INDEX
+		LOGIN
 		
 	-->
 
