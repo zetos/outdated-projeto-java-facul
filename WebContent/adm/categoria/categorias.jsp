@@ -27,6 +27,15 @@
 <link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
 <link href="../../resources/css/style.css" rel="stylesheet">
 
+<!-- jQuery -->
+<!-- Gambiarra -->
+<!-- Bootstrap Core JavaScript -->
+<script src="../../resources/js/jquery.js"></script>
+<script src="../../resources/js/bootstrap.min.js"></script>
+<script src="../../resources/js/script.js"></script>
+<script src="resources/js/jquery.js"></script>
+<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/js/script.js"></script>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,7 +86,8 @@
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
 											alt="editar categoria"></a></td>
-									<td><input data-toggle="modal" data-target="#excluirModal" type="image" class="img-responsive"
+									<td><input data-toggle="modal" data-target="#excluirModal"
+										type="image" class="img-responsive" value="${lista.categoriaId}"
 										src="resources/imgs/outros/delete.png" alt="excluir categoria" />
 									</td>
 								</tr>
@@ -188,7 +198,7 @@
 		</div>
 	</div>
 	<!-- MODAL1 END -->
-	
+
 	<!-- MODAL 2 INICIO -->
 	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel">
@@ -207,59 +217,23 @@
 						<div class="row">
 							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
 								<h1>Tem certeza que deseja excluir essa categoria?</h1>
-								<button type="button" id="excluirModal" class="btn btn-danger">Excluir</button>
 							</div>
 						</div>
 						<!-- div row -->
 					</div>
 					<!-- div container -->
 				</div>
+				<div class="modal-footer">
+					<input type="hidden" name="id" id="categoriaId" />
+					<button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
+					<input type="submit" id="excluirModal" value="Remover"
+						class="btn btn-danger" />
+				</div>
 			</div>
 		</div>
 	</div>
 	<!-- MODAL2 END -->
 
-	<!-- jQuery -->
-	<script src="../../resources/js/jquery.js"></script>
-
-	<!-- Bootstrap Core JavaScript -->
-	<script src="../../resources/js/bootstrap.min.js"></script>
-
-	<!-- Gambiarra -->
-	<script src="resources/js/jquery.js"></script>
-	<script src="resources/js/bootstrap.min.js"></script>
-
-	<!-- Menu Toggle Script -->
-	<script>
-		(function() {
-			$("#menu-toggle").click(function(e) {
-				e.preventDefault();
-				$("#wrapper").toggleClass("toggled");
-			});
-
-			//botao excluir
-			$("#excluirModal").on(
-					'click',
-					function() {
-						var categoriaId = $("#categoriaId").val();
-						$.ajax({
-							// caminho servlet
-							url : "/ProjetoFinal/CategoriaExcluir",
-							type : "POST",
-							data : {
-								id : categoriaId
-							},
-							success : function() {
-								// esconder linha ta tabela
-								$('button[value=' + categoriaId + ']').closest(
-										'tr').fadeOut();
-								//modal esconder
-								$('#confirmation').modal("hide");
-							}
-						});
-					});
-		});
-	</script>
 </body>
 
 </html>
