@@ -32,7 +32,7 @@ public class ExcluirServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			daoCategoria.excluir(Integer.parseInt(request.getParameter("cadastroId")));
+			daoCategoria.excluir(Integer.parseInt(request.getParameter("id")));
 			response.setStatus(HttpServletResponse.SC_OK);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -86,10 +86,8 @@
 										href="/ProjetoFinal/CategoriaAlterar?categoriaId=${lista.categoriaId}"><img
 											class="img-responsive" src="resources/imgs/outros/edit.png"
 											alt="editar categoria"></a></td>
-									<td><input data-toggle="modal" data-target="#excluirModal"
-										type="image" class="img-responsive" value="${lista.categoriaId}"
-										src="resources/imgs/outros/delete.png" alt="excluir categoria" />
-									</td>
+									<td><button value="${lista.categoriaId}"
+											class="btn btn-danger btn-sm excluir">Remover</button></td>
 								</tr>
 							</c:forEach>
 						</table>
@@ -200,9 +198,8 @@
 	<!-- MODAL1 END -->
 
 	<!-- MODAL 2 INICIO -->
-	<div class="modal fade" id="excluirModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
-		<div class="modal-dialog" role="document">
+	<div class="modal fade" id="confirmation">
+		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
@@ -224,7 +221,7 @@
 					<!-- div container -->
 				</div>
 				<div class="modal-footer">
-					<input type="hidden" name="id" id="categoriaId" />
+					<input type="hidden" name="categoriaId" id="categoriaId" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
 					<input type="submit" id="excluirModal" value="Remover"
 						class="btn btn-danger" />
