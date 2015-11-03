@@ -57,34 +57,34 @@ pageEncoding="utf-8"%>
 					<jsp:useBean id="usuario" scope="session" class="bean.Usuario" />
 					<form action="/ProjetoFinal/UsuarioAlterar" method="post">
 						<div class="row form-group">
-							<label for="produtoId">Usuário ID</label> <input
+							<label for="usuarioId">Usuário ID</label> <input
 							class="form-control" type="text" name="usuarioId"
 							value="${usuario.produtoId}" id="usuario_Id" readonly />
 						</div>
 						<div class="row form-group">
-							<label for="nome">Login</label> <input
-							class="form-control" type="text" name="nome"
-							value="${usuario.nome}" id="usuario_nome" required data-validation-required-message="Por favor insira o nome do brinquedo..">
+							<label for="usuario_login">Login</label> <input
+							class="form-control" type="text" name="login"
+							value="${usuario.nome}" id="usuario_login" readonly>
 						</div>
 						<div class="row form-group">
-							<label for="descricao">Nome</label>
+							<label for="usuario_nome">Nome</label>
 							<input
-							class="form-control" type="text" name="descricao"
-							value="${usuario.descricao}" id="usuario_descricao" placeholder="Insira a descrição do brinquedo.." required data-validation-required-message="Por favor insira a descrição do brinquedo">
+							class="form-control" type="text" name="nome"
+							value="${usuario.descricao}" id="usuario_nome" placeholder="Insira o nome do usuário.." required data-validation-required-message="Por favor insira o nome do usuario..">
 
 						</div>
 						<div class="row form-group">
-							<label for="descricao">Senha</label>
+							<label for="usuario_senha">Senha</label>
 							<input
-							class="form-control" type="text" name="descricao"
-							value="${usuario.descricao}" id="usuario_descricao" placeholder="Insira a descrição do brinquedo.." required data-validation-required-message="Por favor insira a descrição do brinquedo">
+							class="form-control" type="text" name="senha"
+							value="${usuario.descricao}" id="usuario_senha" placeholder="Insira a senha do usuario.." required data-validation-required-message="Por favor insira a senha do usuário..">
 
 						</div>
 						<div class="row form-group text-right">
 							<input type="submit" class="btn btn-primary btn-lg"
 							name="bSalvar" value="Salvar" /> 
 							<a class="btn btn-default btn-lg"
-							href="/ProjetoFinal/ProdutoListar" role="button">Voltar</a>
+							href="/ProjetoFinal/UsuarioListar" role="button">Voltar</a>
 						</div>
 					</form>
 				</div>
