@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.CategoriaDAO;
+import dao.UsuarioDAO;
 
 @WebServlet("/UsuarioListar")
 public class ListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CategoriaDAO daoCategoria;
+	private UsuarioDAO daoUsuario;
 
 	public ListarServlet() {
 	}
@@ -25,13 +26,13 @@ public class ListarServlet extends HttpServlet {
 		RequestDispatcher rd = null;
 
 		try {
-			daoCategoria = new CategoriaDAO();
-			request.setAttribute("listarCategorias", daoCategoria.listarCategorias());
+			daoUsuario = new UsuarioDAO();
+			request.setAttribute("listarCategorias", daoUsuario.listarUsuarios());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		rd = request.getRequestDispatcher("adm/categoria/categorias.jsp");
+		rd = request.getRequestDispatcher("adm/usuario/usuarios.jsp");
 		rd.forward(request, response);
 	}
 

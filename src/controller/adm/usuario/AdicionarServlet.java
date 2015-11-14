@@ -10,16 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.Categoria;
+import bean.Usuario;
 import dao.CategoriaDAO;
+import dao.UsuarioDAO;
 
 @WebServlet("/UsuarioAdicionar")
 public class AdicionarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private CategoriaDAO daoCategoria;
+	private UsuarioDAO daoUsuario;
 	private RequestDispatcher rd = null;
 	
     public AdicionarServlet() throws Exception { 
-    	daoCategoria = new CategoriaDAO();
+    	daoUsuario = new UsuarioDAO();
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,18 +31,18 @@ public class AdicionarServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("text/html;charset=UTF-8");
-		Categoria categoria = new Categoria();
+		Usuario usuario = new Usuario();
 		
 		try {
-			categoria.setNome(request.getParameter("nome"));
-			categoria.setLinha(request.getParameter("linha"));
-			categoria.setFaixaEtaria(request.getParameter("faixaEtaria"));
-			daoCategoria.salvar(categoria);
+			usuario.setNome(request.getParameter("nome"));
+			usuario.setLogin(request.getParameter("login"));
+			usuario.setSenha(request.getParameter("senha"));
+			daoUsuario.salvar(usuario);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		rd = request.getRequestDispatcher("/CategoriaListar");
+		rd = request.getRequestDispatcher("/UsuarioListar");
 		rd.forward(request, response);
 	}
 }
