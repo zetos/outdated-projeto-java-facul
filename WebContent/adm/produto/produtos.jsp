@@ -158,12 +158,15 @@
 											</div>
 										</div>
 									</div>
-									<div
-										class="form-group col-xs-12 floating-label-form-group controls">
+									<div class="form-group col-xs-12 floating-label-form-group controls">
 										<label>Imagem do Brinquedo:</label> <input type="text"
 											class="form-control"
 											placeholder="Caminho da Imagem do Brinquedo" name="img"
+<<<<<<< HEAD
 											id="name_brinquedo" required
+=======
+											id="brinquedo_img" required
+>>>>>>> a351c349e9258bd6cc95c87d4befe2c0d7fad521
 											data-validation-required-message="Por favor insira o caminho da imagem do brinquedo..">
 									</div>
 									<div class="row control-group">

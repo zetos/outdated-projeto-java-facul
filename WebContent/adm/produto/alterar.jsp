@@ -59,26 +59,25 @@
 						<div class="row form-group">
 							<label for="produtoId">Produto ID</label> <input
 								class="form-control" type="text" name="produtoId"
-								value="${produto.produtoId}" id="produtoId" readonly />
+								value="${produto.produtoId}" id="produto_Id" readonly />
 						</div>
 						<div class="row form-group">
 							<label for="nome">Nome do brinquedo</label> <input
 								class="form-control" type="text" name="nome"
-								value="${produto.nome}" id="name_categoria" required>
+								value="${produto.nome}" id="produto_nome" required data-validation-required-message="Por favor insira o nome do brinquedo..">
 						</div>
 						<div class="row form-group">
 							<label for="descricao">Descrição</label>
-							<textarea class="form-control" rows="2" id="brinquedo_descricao"
-								name="descricao" placeholder="Insira a descrição do brinquedo.."
-								required
-								data-validation-required-message="Por favor insira a descrição do brinquedo"
-								value="${produto.descricao}"></textarea>
+							<input
+								class="form-control" type="text" name="descricao"
+								value="${produto.descricao}" id="produto_descricao" placeholder="Insira a descrição do brinquedo.." required data-validation-required-message="Por favor insira a descrição do brinquedo">
+
 						</div>
 						<div class="row form-group">
 							<label for="preco">Preço</label>
 							<div class="input-group">
 								<div class="input-group-addon">R$</div>
-								<input type="text" class="form-control" id="brinquedo_preco"
+								<input type="text" class="form-control" id="produto_preco"
 									name="preco" placeholder="Preço do brinquedo.." required
 									data-validation-required-message="Por favor insira o valor do brinquedo.."
 									value="${produto.preco}">
@@ -87,11 +86,11 @@
 						<div class="row form-group">
 							<label for="img">Imagem do brinquedo</label> <input
 								class="form-control" type="text" name="img"
-								value="${produto.img}" id="name_categoria" required>
+								value="${produto.img}" id="produto_img" required>
 						</div>
 						<div class="row form-group">
 							<label for="categoriaId">Categoria</label> <select
-								class="form-control" id="categoriaId" name="categoriaId"
+								class="form-control" id="produto_categoriaId" name="categoriaId"
 								required
 								data-validation-required-message="Por favor insira a categoria!">
 								<c:forEach var="lista"
