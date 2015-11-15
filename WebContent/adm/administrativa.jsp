@@ -13,7 +13,7 @@ pageEncoding="utf-8"%>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Brinquedos Asiaticos - Login</title>
+	<title>Brinquedos Asiaticos - Área Administrativa</title>
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -23,9 +23,9 @@ pageEncoding="utf-8"%>
 	<link href="resources/css/style.css" rel="stylesheet">
 
 	<!-- Gambiarra -->
-	<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
-	<link href="../../resources/css/simple-sidebar.css" rel="stylesheet">
-	<link href="../../resources/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+	<link href="../resources/css/simple-sidebar.css" rel="stylesheet">
+	<link href="../resources/css/style.css" rel="stylesheet">
 
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,48 +40,55 @@ pageEncoding="utf-8"%>
     <body>
     	<div id="wrapper">
     		<!-- Page Layout -->
-    		<jsp:include page="../../resources/include/layoutAdm.jsp" flush="true"></jsp:include>
+    		<jsp:include page="../resources/include/layout.jsp" flush="true"></jsp:include>
 
     		<!-- Page Content -->
     		<div id="page-content-wrapper">
-    			<div class="container-fluid">
+    			<div class="container-fluid login">
     				<div class="row">
-    					<h1>Lista de Usuarios</h1>
+    					<h1>Área Administrativa</h1>
     				</div>
+    				<hr>
     				<br>
     				<div class="row">
-	<!-- 
-	
-		LOGIN
-		
-	-->
+    					<div class="col-md-4 col-md-offset-4">
+    						<form action="" method="get" name="loginForm" id="form_login">
+    							<div class="form-group">
+    								<label for="exampleInputEmail1">Login</label>
+    								<input type="text" class="form-control" id="inputLogin" placeholder="Login">
+    							</div>
+    							<div class="form-group">
+    								<label for="exampleInputPassword1">Senha</label>
+    								<input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+    							</div>
+    							<button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+    						</div>
+    					</div>
 
-</div>
+    				</div>
+    				<br />
+    			</div>
+    			<!-- /#page-content-wrapper -->
+    		</div>
 
-</div>
-<br />
-</div>
-<!-- /#page-content-wrapper -->
-</div>
+    		<!-- jQuery -->
+    		<script src="resources/js/jquery.js"></script>
 
-<!-- jQuery -->
-<script src="resources/js/jquery.js"></script>
+    		<!-- Bootstrap Core JavaScript -->
+    		<script src="resources/js/bootstrap.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="resources/js/bootstrap.min.js"></script>
+    		<!-- Gambiarra -->
+    		<script src="../resources/js/jquery.js"></script>
+    		<script src="../resources/js/bootstrap.min.js"></script>
+    		<script src="../resources/js/script.js"></script>
+    		<script src="resources/js/script.js"></script>
 
-<!-- Gambiarra -->
-<script src="../../resources/js/jquery.js"></script>
-<script src="../../resources/js/bootstrap.min.js"></script>
-<script src="../../resources/js/script.js"></script>
-<script src="resources/js/script.js"></script>
-
-<!-- Menu Toggle Script -->
-<script>
-$("#menu-toggle").click(function(e) {
-	e.preventDefault();
-	$("#wrapper").toggleClass("toggled");
-});
-</script>
-</body>
-</html>
+    		<!-- Menu Toggle Script -->
+    		<script>
+    		$("#menu-toggle").click(function(e) {
+    			e.preventDefault();
+    			$("#wrapper").toggleClass("toggled");
+    		});
+    		</script>
+    	</body>
+    	</html>
