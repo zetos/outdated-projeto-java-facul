@@ -52,14 +52,14 @@ pageEncoding="utf-8"%>
     				<br>
     				<div class="row">
     					<div class="col-md-4 col-md-offset-4">
-    						<form action="" method="get" name="loginForm" id="form_login">
+    						<form action="/ProjetoFinal/Adm" method="post" name="loginForm" id="form_login">
     							<div class="form-group">
     								<label for="exampleInputEmail1">Login</label>
-    								<input type="text" class="form-control" id="inputLogin" placeholder="Login">
+    								<input type="text" name="login" class="form-control" id="inputLogin" placeholder="Login">
     							</div>
     							<div class="form-group">
     								<label for="exampleInputPassword1">Senha</label>
-    								<input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+    								<input type="password" name="senha" class="form-control" id="inputPassword" placeholder="Senha">
     							</div>
     							<button type="submit" class="btn btn-primary btn-lg">Entrar</button>
     						</div>

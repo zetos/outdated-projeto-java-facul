@@ -27,7 +27,7 @@ public class ListarServlet extends HttpServlet {
 
 		try {
 			daoUsuario = new UsuarioDAO();
-			request.setAttribute("listarCategorias", daoUsuario.listarUsuarios());
+			request.setAttribute("listarUsuarios", daoUsuario.listarUsuarios());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

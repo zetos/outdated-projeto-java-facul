@@ -26,7 +26,8 @@ public class AdmServlet extends HttpServlet {
     public AdmServlet() {    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		rd = request.getRequestDispatcher("/adm/administrativa.jsp");
+		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,11 +35,11 @@ public class AdmServlet extends HttpServlet {
 
 		try {
 			dao = new UsuarioDAO();
-			if(dao.Logar(request.getParameter("usuario"), request.getParameter("senha")))
+			if(dao.Logar(request.getParameter("login"), request.getParameter("senha")))
 			{
 				rd = request.getRequestDispatcher("/CategoriaListar");
 			} else {
-				rd = request.getRequestDispatcher("/Adm");
+				rd = request.getRequestDispatcher("/adm/administrativa.jsp");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

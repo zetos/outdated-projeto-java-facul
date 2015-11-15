@@ -56,7 +56,6 @@ pageEncoding="utf-8"%>
     							<th>Código</th>
     							<th>Login</th>
     							<th>Nome</th>
-    							<th>Senha</th>
     							<th>Alterar</th>
     							<th>Excluir</th>
     						</tr>
@@ -65,8 +64,7 @@ pageEncoding="utf-8"%>
     						<tr>
     							<td>${listaUsuario.usuarioId}</td>
     							<td>${listaUsuario.nome}</td>
-    							<td>${listaUsuario.img}</td>
-    							<td>R$ ${listaUsuario.preco}</td>
+    							<td>${listaUsuario.login}</td>
     							<td><a
     								href="/ProjetoFinal/UsuarioAlterar?usuarioId=${listaUsuario.usuarioId}"><img
     								class="img-responsive" src="resources/imgs/outros/edit.png"
@@ -120,7 +118,7 @@ pageEncoding="utf-8"%>
     					<div class="container-fluid">
     						<div class="row">
     							<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-    								<form action="/ProjetoFinal/ProdutoAdicionar" method="post"
+    								<form action="/ProjetoFinal/UsuarioAdicionar" method="post"
     								name="produtoForm" id="form_produto">
     								<div class="row control-group">
     									<div
@@ -145,7 +143,7 @@ pageEncoding="utf-8"%>
     						</div>
 
     						<div class="form-group col-xs-12 floating-label-form-group controls">
-    							<label>Senha do Usuário:</label> <input type="text"
+    							<label>Senha do Usuário:</label> <input type="password"
     							class="form-control"
     							placeholder="Senha do Usuário" name="senha"
     							id="usuario_senha" required

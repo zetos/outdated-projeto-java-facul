@@ -115,7 +115,7 @@ public class UsuarioDAO {
 	
 	public boolean Logar(String usuario, String senha) throws Exception {
 		try {
-			ps = conn.prepareStatement("SELECT * FROM usuario WHERE usuario=? AND senha=?");
+			ps = conn.prepareStatement("SELECT * FROM usuario WHERE login=? AND senha=?");
 			ps.setString(1, usuario);
 			ps.setString(2, senha);
 			rs = ps.executeQuery();
