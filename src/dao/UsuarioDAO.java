@@ -112,4 +112,21 @@ public class UsuarioDAO {
 			ConnectionFactory.closeConnection(conn, ps, rs);
 		}
 	}
+	
+	public boolean Logar(String usuario, String senha) throws Exception {
+		try {
+			ps = conn.prepareStatement("SELECT * FROM usuario WHERE usuario=? AND senha=?");
+			ps.setString(1, usuario);
+			ps.setString(2, senha);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				return true;
+			}
+			return false;
+		} catch (SQLException sqle) {
+			throw new Exception(sqle);
+		} finally {
+			ConnectionFactory.closeConnection(conn, ps, rs);
+		}
+	}
 }
