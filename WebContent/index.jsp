@@ -42,7 +42,7 @@
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Brinquedos Asiaticos</h1>
+						<h1><img src="resources/imgs/outros/toy3.png" alt="logotipo" class="img-rounded logo"> Brinquedos Asiaticos</h1>
 						<span class="promocao">
 							Aproveite nossa Promoção: Leve três, pague quatro!
 						</span>
